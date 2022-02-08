@@ -1,0 +1,106 @@
+.app21 {
+    width: 1170px;
+    height: 617px;
+    left: calc(50% - 1170px / 2);
+    top: 10px;
+    box-shadow: 4px 4px 50px rgba(0, 0, 0, 0.05);
+    border: 0.5px solid #a8a8a8;
+    border-radius: 7px;
+    margin-bottom: 51px;
+}
+
+.titlePage21 {
+    top: 25px;
+    left: calc(50% - 770px / 2);
+    width: 770px;
+    height: 22px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #2f2f2f;
+}
+
+.lineUnderHeading21 {
+    position: absolute;
+    width: 1169px;
+    height: 0px;
+    top: 90px;
+    border-bottom: 1px solid #a8a8a8;
+}
+
+/* content styles */
+
+.content21 {
+    top: 140px;
+    left: calc(50% - 570px / 2);
+    width: 570px;
+    height: 339.69px;
+}
+
+.centerRow21 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.basket21 {
+    border: 1px solid #d0d0d0;
+    width: 270px;
+    height: 160px;
+    border-radius: 5px;
+}
+
+.headerBasket21 {
+    top: -1px;
+    left: -1px;
+    width: 272px;
+    height: 28px;
+    background: #205b64;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.sign21 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+}
+
+.topRow21 {
+    left: calc(50% - 169px / 2);
+    width: 169px;
+    height: 60px;
+    margin-bottom: 55px;
+}
+
+.centerRow21 {
+    height: 161px;
+    margin-bottom: 20px;
+}
+
+.bottomRow21 {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottomRow21 img {
+    cursor: grab;
+}
+
+.defaultApples {
+    margin-top: 10px;
+    margin-left: 10px;
+}

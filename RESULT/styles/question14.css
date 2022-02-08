@@ -1,0 +1,58 @@
+.app14 {
+    width: 1170px;
+    height: 348px;
+    left: calc(50% - 1170px / 2);
+    top: 10px;
+    box-shadow: 4px 4px 50px rgba(0, 0, 0, 0.05);
+    border: 0.5px solid #a8a8a8;
+    border-radius: 7px;
+    margin-bottom: 51px;
+}
+
+.titlePage14 {
+    top: 25px;
+    left: calc(50% - 770px / 2);
+    width: 770px;
+    height: 88px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #2f2f2f;
+}
+
+.lineUnderHeading14 {
+    top: 135px;
+    position: absolute;
+    width: 1169px;
+    height: 0px;
+    border-bottom: 1px solid #a8a8a8;
+}
+
+/* content styles */
+
+.content14 {
+    top: 124px;
+    left: calc(50% - 294px / 2);
+    width: 294px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content14 div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content14 input {
+    width: 57px;
+    height: 30.15px;
+    margin-left: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    text-align: center;
+}

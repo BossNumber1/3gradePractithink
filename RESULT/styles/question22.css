@@ -1,0 +1,124 @@
+.app22 {
+    width: 1170px;
+    height: 643px;
+    left: calc(50% - 1170px / 2);
+    top: 10px;
+    box-shadow: 4px 4px 50px rgba(0, 0, 0, 0.05);
+    border: 0.5px solid #a8a8a8;
+    border-radius: 7px;
+    margin-bottom: 51px;
+}
+
+.titlePage22 {
+    top: 25px;
+    left: calc(50% - 770px / 2);
+    width: 770px;
+    height: 22px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2f2f2f;
+}
+
+.lineUnderHeading22 {
+    position: absolute;
+    width: 1169px;
+    height: 0px;
+    top: 70px;
+    border-bottom: 1px solid #a8a8a8;
+}
+
+/* content styles */
+
+.content22 {
+    top: 100px;
+    left: calc(50% - 768px / 2);
+    width: 768px;
+    height: 370px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.graph22 {
+    width: 366.69px;
+    height: 359.08px;
+}
+
+.table22 {
+    width: 369px;
+    height: 221px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.leftColumn22,
+.rightColumn22 {
+    width: 185px;
+    height: 221px;
+}
+
+/* rows styles */
+
+.first1row22,
+.second1row22,
+.third1row22,
+.fourth1row22,
+.fifth1row22,
+.first2row22,
+.second2row22,
+.third2row22,
+.fourth2row22,
+.fifth2row22 {
+    width: 199.54px;
+    height: 45px;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+    padding-top: 12.5px;
+    text-align: center;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.first1row22,
+.first2row22 {
+    background: #68c2d0;
+    color: white;
+}
+
+.first1row22,
+.second1row22,
+.third1row22,
+.fourth1row22,
+.fifth1row22,
+.first2row22 {
+    font-weight: 600;
+}
+
+.second2row22,
+.third2row22,
+.fourth2row22,
+.fifth2row22 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table22 input {
+    margin-top: -13px;
+    width: 61px;
+    height: 30px;
+    background: #ffffff;
+    border: 1px solid #2f2f2f;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: center;
+}
