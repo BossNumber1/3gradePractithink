@@ -37,5 +37,40 @@
     left: calc(50% - 630px / 2);
     width: 630px;
     height: 167px;
-    border: 1px solid;
+}
+
+.topRow1 {
+    height: 80px;
+    margin-bottom: 50px;
+}
+
+.bottomRow1 {
+    left: calc(50% - 184px / 2);
+    width: 184px;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content1 input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 16px;
+    width: 48px;
+    height: 30px;
+    border: 1px solid #2f2f2f;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.content1:not(input) {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 37px;
 }
