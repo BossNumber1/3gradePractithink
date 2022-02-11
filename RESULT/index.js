@@ -1329,7 +1329,7 @@ function question1() {
                 1
             );
 
-            addCorrectAnswerQuestion1();
+            //addCorrectAnswerQuestion1();
         }
     } else {
         document.getElementById("firstBtn1").style.border = "2px solid #FFB47D";
@@ -1350,7 +1350,7 @@ let numbers2 = {
     thirdNumber: "",
 };
 
-gettingDataFromFields(3, [2, 9, 16], 2, numbers2);
+// gettingDataFromFields(3, [2, 9, 16], 2, numbers2);
 
 function question2() {
     if (
@@ -1381,7 +1381,7 @@ function question2() {
                 2
             );
 
-            addCorrectAnswerQuestion2();
+            //addCorrectAnswerQuestion2();
         }
     } else {
         highlightUnselectedBlocks(3, 2, numbers2);
@@ -1414,7 +1414,7 @@ function question3() {
                 3
             );
 
-            addCorrectAnswerQuestion3();
+            //addCorrectAnswerQuestion3();
         }
     } else {
         document.getElementById("firstBtn3").style.border = "2px solid #FFB47D";
@@ -1432,7 +1432,7 @@ let numbers4 = {
     thirdNumber: "",
 };
 
-gettingDataFromFields(3, [6, 6, 12], 4, numbers4);
+// gettingDataFromFields(3, [6, 6, 12], 4, numbers4);
 
 function question4() {
     if (
@@ -1483,7 +1483,7 @@ function question4() {
                 4
             );
 
-            addCorrectAnswerQuestion4();
+            //addCorrectAnswerQuestion4();
         }
     } else {
         if (selectBtn4 === "") {
@@ -1508,7 +1508,7 @@ let numbers5 = {
     sixthNumber: "",
 };
 
-gettingDataFromFields(6, [3, 3, 3, 3, 3, 15], 5, numbers5);
+// gettingDataFromFields(6, [3, 3, 3, 3, 3, 15], 5, numbers5);
 
 function question5() {
     if (
@@ -1545,7 +1545,7 @@ function question5() {
                 5
             );
 
-            addCorrectAnswerQuestion5();
+            //addCorrectAnswerQuestion5();
         }
     } else {
         highlightUnselectedBlocks(6, 5, numbers5);
@@ -1657,7 +1657,7 @@ function question6() {
                 6
             );
 
-            addCorrectAnswerQuestion6();
+            //addCorrectAnswerQuestion6();
         }
     } else {
         document.getElementById("firstBtn6").classList.remove("selectedCircle");
@@ -1674,7 +1674,7 @@ let numbers7 = {
     thirdNumber: "",
 };
 
-gettingDataFromFields(3, [7, 0, 6], 7, numbers7);
+// gettingDataFromFields(3, [7, 0, 6], 7, numbers7);
 
 function question7() {
     if (
@@ -1705,7 +1705,7 @@ function question7() {
                 7
             );
 
-            addCorrectAnswerQuestion7();
+            //addCorrectAnswerQuestion7();
         }
     } else {
         highlightUnselectedBlocks(3, 7, numbers7);
@@ -1756,7 +1756,7 @@ function question8() {
                 8
             );
 
-            addCorrectAnswerQuestion8();
+            //addCorrectAnswerQuestion8();
         }
     } else {
         document.getElementById("firstBtn8").style.border = "2px solid #FFB47D";
@@ -1777,7 +1777,7 @@ let numbers9 = {
     thirdNumber: "",
 };
 
-gettingDataFromFields(3, [42, 37, 5], 9, numbers9);
+// gettingDataFromFields(3, [42, 37, 5], 9, numbers9);
 
 function question9() {
     if (
@@ -1808,7 +1808,7 @@ function question9() {
                 9
             );
 
-            addCorrectAnswerQuestion9();
+            //addCorrectAnswerQuestion9();
         }
     } else {
         highlightUnselectedBlocks(3, 9, numbers9);
@@ -1821,7 +1821,7 @@ let numbers10 = {
     firstNumber: "",
 };
 
-gettingDataFromFields(1, ["14 + 4 = 18"], 10, numbers10);
+// gettingDataFromFields(1, ["14 + 4 = 18"], 10, numbers10);
 
 function question10() {
     if (numbers10.firstNumber != "") {
@@ -1844,7 +1844,7 @@ function question10() {
                 10
             );
 
-            addCorrectAnswerQuestion10();
+            //addCorrectAnswerQuestion10();
         }
     } else {
         highlightUnselectedBlocks(1, 10, numbers10);
@@ -1857,7 +1857,7 @@ let numbers11 = {
     firstNumber: "",
 };
 
-gettingDataFromFields(1, [5], 11, numbers11);
+// gettingDataFromFields(1, [5], 11, numbers11);
 
 function question11() {
     // получаем содежимое блоков
@@ -1980,7 +1980,7 @@ function question11() {
                 11
             );
 
-            addCorrectAnswerQuestion11();
+            //addCorrectAnswerQuestion11();
         }
     } else {
         if (
@@ -2004,7 +2004,7 @@ let numbers12 = {
     firstNumber: "",
 };
 
-gettingDataFromFields(1, [10], 12, numbers12);
+// gettingDataFromFields(1, [10], 12, numbers12);
 
 function question12() {
     // получаем содежимое блоков
@@ -2128,7 +2128,7 @@ function question12() {
                 12
             );
 
-            addCorrectAnswerQuestion12();
+            //addCorrectAnswerQuestion12();
         }
     } else {
         if (
@@ -2150,71 +2150,6 @@ function question12() {
 
 // 13 QUESTION
 
-const rotationFunction = new Propeller(
-    document.getElementsByClassName("ruler")[0],
-    {
-        inertia: 0,
-    }
-);
-
-dragElement(document.getElementsByClassName("ruler")[0]);
-
-function dragElement(element) {
-    let pos1 = 0,
-        pos2 = 0,
-        pos3 = 0,
-        pos4 = 0;
-
-    element.onmousedown = dragMouseDown;
-
-    function dragMouseDown(e) {
-        e = e || window.event;
-        // get the mouse cursor position at startup:
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        document.onmouseup = closeDragElement;
-        document.onmousemove = elementDrag;
-    }
-
-    function elementDrag(e) {
-        e = e || window.event;
-        // calculate the new cursor position:
-        pos1 = pos3 - e.clientX;
-        pos2 = pos4 - e.clientY;
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        // set the element's new position:
-        element.style.top = element.offsetTop - pos2 + "px";
-        element.style.left = element.offsetLeft - pos1 + "px";
-    }
-
-    function closeDragElement() {
-        document.onmouseup = null;
-        document.onmousemove = null;
-    }
-}
-
-document
-    .getElementsByClassName("ruler")[0]
-    .addEventListener("mousedown", (e) => {
-        if (
-            (e.target.className !== "leftEdge" ||
-                e.target.className !== "rightEdge") &&
-            e.target.className === "imgRuler"
-        ) {
-            rotationFunction.stop();
-            dragElement(document.getElementsByClassName("ruler")[0]);
-        }
-
-        if (
-            (e.target.className === "leftEdge" ||
-                e.target.className === "rightEdge") &&
-            e.target.className !== "imgRuler"
-        ) {
-            rotationFunction.onRotated(e);
-        }
-    });
-
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 
 // 13 QUESTION
@@ -2228,7 +2163,7 @@ let numbers13 = {
     sixthNumber: "",
 };
 
-gettingDataFromFields(6, [5, 0, 2, "1/2", 3, 0], 13, numbers13);
+// gettingDataFromFields(6, [5, 0, 2, "1/2", 3, 0], 13, numbers13);
 
 function question13() {
     if (
@@ -2293,7 +2228,7 @@ function question13() {
                 13
             );
 
-            addCorrectAnswerQuestion13();
+            //addCorrectAnswerQuestion13();
         }
     } else {
         highlightUnselectedBlocks(6, 13, numbers13);
@@ -2307,7 +2242,7 @@ let numbers14 = {
     secondNumber: "",
 };
 
-gettingDataFromFields(2, [77, 13], 14, numbers14);
+// gettingDataFromFields(2, [77, 13], 14, numbers14);
 
 function question14() {
     if (numbers14.firstNumber != "" && numbers14.secondNumber != "") {
@@ -2333,7 +2268,7 @@ function question14() {
                 14
             );
 
-            addCorrectAnswerQuestion14();
+            //addCorrectAnswerQuestion14();
         }
     } else {
         highlightUnselectedBlocks(2, 14, numbers14);
@@ -2366,7 +2301,7 @@ function question15() {
                 15
             );
 
-            addCorrectAnswerQuestion15();
+            //addCorrectAnswerQuestion15();
         }
     } else {
         document.getElementById("firstBtn15").style.border =
@@ -2385,7 +2320,7 @@ let numbers16 = {
     fourthNumber: "",
 };
 
-gettingDataFromFields(4, ["12:10", "08:55", "05:50", "12:30"], 16, numbers16);
+// gettingDataFromFields(4, ["12:10", "08:55", "05:50", "12:30"], 16, numbers16);
 
 function question16() {
     if (
@@ -2418,7 +2353,7 @@ function question16() {
                 16
             );
 
-            addCorrectAnswerQuestion16();
+            //addCorrectAnswerQuestion16();
         }
     } else {
         highlightUnselectedBlocks(4, 16, numbers16);
@@ -2502,7 +2437,7 @@ function question17() {
                 17
             );
 
-            addCorrectAnswerQuestion17();
+            //addCorrectAnswerQuestion17();
         }
     } else {
         document
@@ -2540,7 +2475,7 @@ function question18() {
                 18
             );
 
-            addCorrectAnswerQuestion18();
+            //addCorrectAnswerQuestion18();
         }
     } else {
         document.getElementById("firstBtn18").style.border =
@@ -2629,7 +2564,7 @@ function question19() {
                 19
             );
 
-            addCorrectAnswerQuestion19();
+            //addCorrectAnswerQuestion19();
         }
     } else {
         document
@@ -2650,7 +2585,7 @@ let numbers20 = {
     fourthNumber: "",
 };
 
-gettingDataFromFields(4, [3, 27, 3, 33], 20, numbers20);
+// gettingDataFromFields(4, [3, 27, 3, 33], 20, numbers20);
 
 function question20() {
     // проверяем на присутствие знака
@@ -2690,7 +2625,7 @@ function question20() {
                 20
             );
 
-            addCorrectAnswerQuestion20();
+            //addCorrectAnswerQuestion20();
         }
     } else {
         highlightUnselectedBlocks(4, 20, numbers20);
@@ -2769,7 +2704,7 @@ function question21() {
                 21
             );
 
-            addCorrectAnswerQuestion21();
+            //addCorrectAnswerQuestion21();
         }
     } else {
         basket.style.border = "2px solid #FFB47D";
@@ -2785,7 +2720,7 @@ let numbers22 = {
     fourthNumber: "",
 };
 
-gettingDataFromFields(4, [7, 3, 4, 2], 22, numbers22);
+// gettingDataFromFields(4, [7, 3, 4, 2], 22, numbers22);
 
 function question22() {
     if (
@@ -2836,7 +2771,7 @@ function question22() {
                 22
             );
 
-            addCorrectAnswerQuestion22();
+            //addCorrectAnswerQuestion22();
         }
     } else {
         highlightUnselectedBlocks(4, 22, numbers22);
@@ -2898,7 +2833,7 @@ function question23() {
                 23
             );
 
-            addCorrectAnswerQuestion23();
+            //addCorrectAnswerQuestion23();
         }
     } else {
         if (nameChild1 === "emptyPlace") {
@@ -2923,26 +2858,26 @@ function question23() {
 
 document.getElementById("submit").onclick = function () {
     question1();
-    question2();
-    question3();
-    question4();
-    question5();
-    question6();
-    question7();
-    question8();
-    question9();
-    question10();
-    question11();
-    question12();
-    question13();
-    question14();
-    question15();
-    question16();
-    question17();
-    question18();
-    question19();
-    question20();
-    question21();
-    question22();
-    question23();
+    // question2();
+    // question3();
+    // question4();
+    // question5();
+    // question6();
+    // question7();
+    // question8();
+    // question9();
+    // question10();
+    // question11();
+    // question12();
+    // question13();
+    // question14();
+    // question15();
+    // question16();
+    // question17();
+    // question18();
+    // question19();
+    // question20();
+    // question21();
+    // question22();
+    // question23();
 };
