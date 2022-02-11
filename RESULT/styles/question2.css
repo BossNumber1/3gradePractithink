@@ -23,7 +23,7 @@
 }
 
 .lineUnderHeading2 {
-    top: 70px;
+    top: 100px;
     position: absolute;
     width: 1169px;
     height: 0px;
@@ -33,12 +33,33 @@
 /* content styles */
 
 .content2 {
-    top: 100px;
+    top: 120px;
     left: calc(50% - 236px / 2);
     width: 236px;
     height: 37px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid;
+}
+
+.content2 input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 16px;
+    width: 60px;
+    height: 30px;
+    border: 1px solid #2f2f2f;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.content2:not(input) {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 37px;
 }
