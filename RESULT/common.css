@@ -96,10 +96,13 @@ body {
 .subtitle6,
 .subtitle9,
 .subtitle12,
-.subtitle16,
 .subtitle25,
 .subtitle26 {
     margin-top: 17px;
+}
+
+.subtitle16 {
+    margin-top: 75px;
 }
 
 .subtitle8 {
