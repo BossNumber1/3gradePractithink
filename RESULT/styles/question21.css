@@ -23,10 +23,10 @@
 }
 
 .lineUnderHeading21 {
+    top: 100px;
     position: absolute;
     width: 1169px;
     height: 0px;
-    top: 90px;
     border-bottom: 1px solid #a8a8a8;
 }
 
@@ -37,5 +37,39 @@
     left: calc(50% - 230px / 2);
     width: 230px;
     height: 241px;
-    border: 1px solid;
+}
+
+.topRow21 {
+    margin-bottom: 50px;
+}
+
+.bottomRow21 {
+    left: calc(50% - 109px / 2);
+    width: 109px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.content21 input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 16px;
+    width: 70px;
+    height: 30px;
+    border: 1px solid #2f2f2f;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.content21:not(input) {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
 }
