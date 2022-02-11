@@ -33,8 +33,11 @@
 
 .content13 {
     top: 100px;
-    left: calc(50% - 570px / 2);
-    width: 570px;
-    height: 370.83px;
+    left: calc(50% - 569.29px / 2);
+    width: 569.29px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     border: 1px solid;
 }

@@ -36,11 +36,8 @@
 
 .content18 {
     top: 100px;
-    left: calc(50% - 570px / 2);
-    width: 570px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    left: calc(50% - 450px / 2);
+    width: 450px;
+    height: 120px;
     border: 1px solid;
 }

@@ -34,13 +34,8 @@
 
 .content1 {
     top: 100px;
-    left: calc(50% - 474px / 2);
-    width: 474px;
-    height: 45px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
+    left: calc(50% - 630px / 2);
+    width: 630px;
+    height: 167px;
     border: 1px solid;
 }

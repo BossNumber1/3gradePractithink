@@ -34,12 +34,11 @@
 
 .content2 {
     top: 100px;
-    left: calc(50% - 417px / 2);
-    width: 417px;
-    height: 30px;
+    left: calc(50% - 236px / 2);
+    width: 236px;
+    height: 37px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     border: 1px solid;
 }

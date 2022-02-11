@@ -37,9 +37,9 @@
 
 .content22 {
     top: 100px;
-    left: calc(50% - 768px / 2);
-    width: 768px;
-    height: 370px;
+    left: calc(50% - 105px / 2);
+    width: 105px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;

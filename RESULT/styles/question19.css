@@ -34,11 +34,8 @@
 
 .content19 {
     top: 100px;
-    left: calc(50% - 570px / 2);
-    width: 570px;
-    height: 170px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    left: calc(50% - 705px / 2);
+    width: 705px;
+    height: 491px;
     border: 1px solid;
 }
