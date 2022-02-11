@@ -35,9 +35,24 @@
 /* content styles */
 
 .content18 {
-    top: 100px;
+    top: 120px;
     left: calc(50% - 450px / 2);
     width: 450px;
     height: 120px;
-    border: 1px solid;
+}
+
+.topRow18 {
+    margin-bottom: 33px;
+}
+
+.topRow18,
+.bottomRow18 {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottomRow18 div {
+    cursor: grab;
 }
