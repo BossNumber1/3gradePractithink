@@ -41,18 +41,3 @@
     align-items: center;
     justify-content: space-between;
 }
-
-.content14 div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.content14 input {
-    width: 57px;
-    height: 30.15px;
-    margin-left: 10px;
-    border: 1px solid;
-    border-radius: 5px;
-    text-align: center;
-}

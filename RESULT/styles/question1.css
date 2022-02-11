@@ -44,17 +44,3 @@
 
     /* border: 1px solid orange; */
 }
-
-.content1 div {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    /* padding: 6px 16px; */
-    width: 70px;
-    height: 45px;
-    border: 1px solid #2f2f2f;
-    box-sizing: border-box;
-    border-radius: 5px;
-    cursor: pointer;
-}

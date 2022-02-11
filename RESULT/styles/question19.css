@@ -41,28 +41,3 @@
     align-items: center;
     justify-content: space-between;
 }
-
-.content19 div {
-    width: 170px;
-    height: 170px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.selectedPicture19 {
-    border: 1px solid #369cb7;
-    box-shadow: 2px 2px 20px 1px rgba(54, 156, 183, 0.29);
-    border-radius: 10px;
-}
-
-.success19 {
-    border: 1px solid #9dd765;
-    border-radius: 5px;
-}
-
-.error19 {
-    border: 1px solid #ffb47d;
-    border-radius: 5px;
-}

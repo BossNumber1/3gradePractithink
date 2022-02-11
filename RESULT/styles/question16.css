@@ -38,28 +38,3 @@
     width: 490px;
     height: 164px;
 }
-
-.bottomRow16 {
-    top: 20px;
-    width: 490px;
-    height: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.bottomRow16 input {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 8px;
-    background: #ffffff;
-    border: 1px solid #369cb7;
-    box-sizing: border-box;
-    border-radius: 5px;
-    width: 100px;
-    height: 34px;
-    text-align: center;
-    color: #369cb7;
-}

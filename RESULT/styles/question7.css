@@ -41,17 +41,3 @@
     align-items: center;
     justify-content: space-between;
 }
-
-.content7 input {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 6px 16px;
-    width: 40px;
-    height: 30px;
-    border: 1px solid #2f2f2f;
-    box-sizing: border-box;
-    border-radius: 5px;
-    text-align: center;
-}
