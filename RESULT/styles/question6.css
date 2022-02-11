@@ -33,9 +33,54 @@
 /* content styles */
 
 .content6 {
-    top: 100px;
+    top: 130px;
     left: calc(50% - 270px / 2);
     width: 270px;
     height: 140px;
-    border: 1px solid;
+}
+
+.topRow6 {
+    left: calc(50% - 193px / 2);
+    width: 193px;
+    height: 45px;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.topRow6 div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 16px;
+    width: 70px;
+    height: 45px;
+    border: 1px solid #2f2f2f;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.bottomRow6 {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottomRow6 div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 16px;
+    width: 70px;
+    height: 45px;
+    background: #369cb7;
+    border: 1px solid #369cb7;
+    box-sizing: border-box;
+    border-radius: 5px;
+    cursor: grab;
+    color: white;
 }
