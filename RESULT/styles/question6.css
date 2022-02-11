@@ -48,7 +48,7 @@
     align-items: center;
     justify-content: space-evenly;
 }
-
+/* 
 .topRow6 div {
     display: flex;
     flex-direction: row;
@@ -60,7 +60,7 @@
     border: 1px solid #2f2f2f;
     box-sizing: border-box;
     border-radius: 5px;
-}
+} */
 
 .bottomRow6 {
     height: 45px;

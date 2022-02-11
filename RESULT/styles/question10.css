@@ -35,9 +35,25 @@
 /* content styles */
 
 .content10 {
-    top: 100px;
+    top: 120px;
     left: calc(50% - 370px / 2);
     width: 370px;
     height: 140px;
-    border: 1px solid;
+}
+
+.topRow10 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 47px;
+}
+
+.bottomRow10 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottomRow10 div {
+    cursor: grab;
 }
