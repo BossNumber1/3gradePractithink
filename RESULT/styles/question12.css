@@ -33,9 +33,25 @@
 /* content styles */
 
 .content12 {
-    top: 100px;
+    top: 130px;
     left: calc(50% - 569px / 2);
     width: 569px;
     height: 74.15px;
-    border: 1px solid;
+}
+
+.content12 input {
+    top: 15px;
+    left: 335px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 16px;
+    position: absolute;
+    width: 41.18px;
+    height: 30px;
+    border: 1px solid #369cb7;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: center;
 }
