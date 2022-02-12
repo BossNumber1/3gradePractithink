@@ -26,7 +26,7 @@
 }
 
 .lineUnderHeading8 {
-    top: 80px;
+    top: 50px;
     position: absolute;
     width: 1169px;
     height: 0px;
@@ -36,9 +36,57 @@
 /* content styles */
 
 .content8 {
-    top: 100px;
+    top: 120px;
     left: calc(50% - 570px / 2);
     width: 570px;
     height: 335px;
-    border: 1px solid;
+}
+
+/* top row styles */
+
+.topRow8 {
+    height: 45px;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.topRow8 div {
+    cursor: grab;
+}
+
+/* bottom row styles */
+
+.bottomRow8 {
+    height: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.basket8first,
+.basket8second {
+    width: 270px;
+    height: 210px;
+    border: 1px solid #d0d0d0;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.headerBasket8 {
+    top: -1px;
+    width: 269.5px;
+    height: 28px;
+    background: #205b64;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #ffffff;
 }
