@@ -22,7 +22,7 @@
 }
 
 .lineUnderHeading13 {
-    top: 100px;
+    top: 70px;
     position: absolute;
     width: 1169px;
     height: 0px;
@@ -32,12 +32,42 @@
 /* content styles */
 
 .content13 {
-    top: 100px;
+    top: 120px;
     left: calc(50% - 569.29px / 2);
     width: 569.29px;
     height: 64px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid;
+}
+
+#firstNumber13,
+#secondNumber13,
+#thirdNumber13 {
+    top: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 16px;
+    position: absolute;
+    width: 41.18px;
+    height: 30px;
+    border: 1px solid #2f2f2f;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#firstNumber13 {
+    left: 48px;
+}
+
+#secondNumber13 {
+    left: 287px;
+}
+
+#thirdNumber13 {
+    top: -5px;
+    left: 527px;
 }
