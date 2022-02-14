@@ -1031,7 +1031,7 @@ function addCorrectAnswerQuestion16() {
 }
 
 function addCorrectAnswerQuestion17() {
-    document.getElementsByClassName("app17")[0].style.height = "900px";
+    document.getElementsByClassName("app17")[0].style.height = "1000px";
     addCorrectAnswer(
         "correctAnswer17",
         "17que",
@@ -2450,6 +2450,7 @@ document.getElementById("submit").onclick = function () {
     // question16();
     addCorrectAnswerQuestion16();
     // question17();
+    addCorrectAnswerQuestion17();
     // question18();
     // question19();
     // question20();
