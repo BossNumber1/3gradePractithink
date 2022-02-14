@@ -2434,6 +2434,7 @@ document.getElementById("submit").onclick = function () {
     // question8();
     addCorrectAnswerQuestion8();
     // question9();
+    addCorrectAnswerQuestion9();
     // question10();
     // question11();
     // question12();
