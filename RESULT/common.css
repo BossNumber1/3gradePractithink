@@ -329,7 +329,10 @@ body {
     top: 80px;
 }
 
-.contentCorrectAnswer4,
+.contentCorrectAnswer4 {
+    top: 170px;
+}
+
 .contentCorrectAnswer13,
 .contentCorrectAnswer16 {
     top: 100px;
