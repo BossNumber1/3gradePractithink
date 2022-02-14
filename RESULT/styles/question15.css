@@ -36,9 +36,49 @@
 /* content styles */
 
 .content15 {
-    top: 100px;
+    top: 120px;
     left: calc(50% - 165px / 2);
     width: 165px;
     height: 183px;
-    border: 1px solid;
+}
+
+.topRow15 {
+    left: calc(50% - 100px / 2);
+    width: 100px;
+    height: 100px;
+    margin-bottom: 43px;
+}
+
+.bottomRow15 {
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#firstNumber15 {
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    background: #ffffff;
+    border: 1px solid #369cb7;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: center;
+    color: #369cb7;
+}
+
+select {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 7px 8px;
+    height: 40px;
+    background: #ffffff;
+    border: 1px solid #369cb7;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #369cb7;
 }
