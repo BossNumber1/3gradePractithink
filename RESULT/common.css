@@ -220,9 +220,12 @@ body {
 }
 
 .correctAnswer4,
-.correctAnswer13,
 .correctAnswer19 {
     top: 180px;
+}
+
+.correctAnswer13 {
+    top: 225px;
 }
 
 .correctAnswer9 {
@@ -351,7 +354,10 @@ body {
     top: 170px;
 }
 
-.contentCorrectAnswer13,
+.contentCorrectAnswer13 {
+    top: 70px;
+}
+
 .contentCorrectAnswer16 {
     top: 100px;
 }
