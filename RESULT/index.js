@@ -1001,12 +1001,12 @@ function addCorrectAnswerQuestion13() {
 }
 
 function addCorrectAnswerQuestion14() {
-    document.getElementsByClassName("app14")[0].style.height = "450px";
+    document.getElementsByClassName("app14")[0].style.height = "1000px";
     addCorrectAnswer(
         "correctAnswer14",
         "14que",
         "app14",
-        "contentCorrectAnswer"
+        "contentCorrectAnswer14"
     );
 }
 
@@ -2444,6 +2444,7 @@ document.getElementById("submit").onclick = function () {
     // question13();
     addCorrectAnswerQuestion13();
     // question14();
+    addCorrectAnswerQuestion14();
     // question15();
     // question16();
     // question17();

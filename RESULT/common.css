@@ -191,7 +191,7 @@ body {
 }
 
 .correctAnswer14 {
-    top: 180px;
+    top: 220px;
 }
 
 .correctAnswer18 {
@@ -362,7 +362,10 @@ body {
     top: 100px;
 }
 
-.contentCorrectAnswer14,
+.contentCorrectAnswer14 {
+    top: 120px;
+}
+
 .contentCorrectAnswer22 {
     top: 120px;
 }
