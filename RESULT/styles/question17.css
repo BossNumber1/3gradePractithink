@@ -33,9 +33,30 @@
 /* content styles */
 
 .content17 {
-    top: 100px;
+    top: 120px;
     left: calc(50% - 370px / 2);
     width: 370px;
     height: 342.64px;
-    border: 1px solid;
+}
+
+.topRow17 {
+    height: 250px;
+    margin-bottom: 27px;
+}
+
+.bottomRow17 {
+    left: calc(50% - 247.16px / 2);
+    width: 247.16px;
+    height: 62.64px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottomRow17 div {
+    cursor: grab;
+}
+
+.placeToInsert {
+    top: -260px;
+    left: 270px;
 }
