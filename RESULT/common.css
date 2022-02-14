@@ -250,7 +250,7 @@ body {
 }
 
 .correctAnswer16 {
-    top: 200px;
+    top: 230px;
 }
 
 .correctAnswer7 img:not(:last-child),
@@ -359,7 +359,7 @@ body {
 }
 
 .contentCorrectAnswer16 {
-    top: 100px;
+    top: 50px;
 }
 
 .contentCorrectAnswer14 {
