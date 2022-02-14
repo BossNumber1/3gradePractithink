@@ -1041,7 +1041,7 @@ function addCorrectAnswerQuestion17() {
 }
 
 function addCorrectAnswerQuestion18() {
-    document.getElementsByClassName("app18")[0].style.height = "450px";
+    document.getElementsByClassName("app18")[0].style.height = "550px";
     addCorrectAnswer(
         "correctAnswer18",
         "18que",
@@ -1051,7 +1051,7 @@ function addCorrectAnswerQuestion18() {
 }
 
 function addCorrectAnswerQuestion19() {
-    document.getElementsByClassName("app19")[0].style.height = "650px";
+    document.getElementsByClassName("app19")[0].style.height = "1000px";
     addCorrectAnswer(
         "correctAnswer19",
         "19que",
@@ -2452,7 +2452,9 @@ document.getElementById("submit").onclick = function () {
     // question17();
     addCorrectAnswerQuestion17();
     // question18();
+    addCorrectAnswerQuestion18();
     // question19();
+    addCorrectAnswerQuestion19();
     // question20();
     // question21();
     // question22();

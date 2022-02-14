@@ -219,9 +219,12 @@ body {
     top: 200px;
 }
 
-.correctAnswer4,
-.correctAnswer19 {
+.correctAnswer4 {
     top: 180px;
+}
+
+.correctAnswer19 {
+    top: 220px;
 }
 
 .correctAnswer13 {
@@ -371,7 +374,7 @@ body {
 }
 
 .contentCorrectAnswer19 {
-    top: 100px;
+    top: 80px;
 }
 
 .contentCorrectAnswer8 {
