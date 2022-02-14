@@ -2430,6 +2430,7 @@ document.getElementById("submit").onclick = function () {
     // question6();
     addCorrectAnswerQuestion6();
     // question7();
+    addCorrectAnswerQuestion7();
     // question8();
     // question9();
     // question10();
