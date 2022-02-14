@@ -220,11 +220,14 @@ body {
 }
 
 .correctAnswer4,
-.correctAnswer6,
 .correctAnswer9,
 .correctAnswer13,
 .correctAnswer19 {
     top: 180px;
+}
+
+.correctAnswer6 {
+    top: 220px;
 }
 
 .correctAnswer11,
