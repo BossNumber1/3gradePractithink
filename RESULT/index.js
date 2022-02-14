@@ -946,7 +946,7 @@ function addCorrectAnswerQuestion6() {
 }
 
 function addCorrectAnswerQuestion7() {
-    document.getElementsByClassName("app7")[0].style.height = "400px";
+    document.getElementsByClassName("app7")[0].style.height = "500px";
     addCorrectAnswer("correctAnswer7", "7que", "app7", "contentCorrectAnswer7");
 }
 
