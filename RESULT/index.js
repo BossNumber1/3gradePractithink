@@ -526,184 +526,30 @@ function commonForNoselectedBtn(arrayBtnsId) {
 
 // ------------------------------------------------------------ ALL SELECT BTNS -------------------------------------------------------------
 
-// 1 QUESTION;
-
-let selectedButton1 = {
-    firstBtn1: "",
-    secondBtn1: "",
-    thirdBtn1: "",
-    fourthBtn1: "",
-    fifthBtn1: "",
-};
-
-document.getElementById("firstBtn1").onclick = function () {
-    commonForSelectBtn("firstBtn1");
-
-    selectedButton1.firstBtn1 = "right";
-};
-
-document.getElementById("secondBtn1").onclick = function () {
-    commonForSelectBtn("secondBtn1");
-
-    selectedButton1.secondBtn1 = "wrong";
-};
-
-document.getElementById("thirdBtn1").onclick = function () {
-    commonForSelectBtn("thirdBtn1");
-
-    selectedButton1.thirdBtn1 = "wrong";
-};
-
-document.getElementById("fourthBtn1").onclick = function () {
-    commonForSelectBtn("fourthBtn1");
-
-    selectedButton1.fourthBtn1 = "right";
-};
-
-document.getElementById("fifthBtn1").onclick = function () {
-    commonForSelectBtn("fifthBtn1");
-
-    selectedButton1.fifthBtn1 = "right";
-};
-
 // 3 QUESTION
 
-let selectBtn3 = "",
-    nameSelectedBtn3 = "";
+let selectedButton3 = {
+    firstBtn3: "",
+    secondBtn3: "",
+    thirdBtn3: "",
+};
 
 document.getElementById("firstBtn3").onclick = function () {
-    selectBtn3 = "right";
-    nameSelectedBtn3 = "firstBtn3";
-
     commonForSelectBtn("firstBtn3");
-    commonForNoselectedBtn(["secondBtn3", "thirdBtn3"]);
+
+    selectedButton3.firstBtn3 = "wrong";
 };
 
 document.getElementById("secondBtn3").onclick = function () {
-    selectBtn3 = "wrong";
-    nameSelectedBtn3 = "secondBtn3";
-
     commonForSelectBtn("secondBtn3");
-    commonForNoselectedBtn(["firstBtn3", "thirdBtn3"]);
+
+    selectedButton3.secondBtn3 = "right";
 };
 
 document.getElementById("thirdBtn3").onclick = function () {
-    selectBtn3 = "wrong";
-    nameSelectedBtn3 = "thirdBtn3";
-
     commonForSelectBtn("thirdBtn3");
-    commonForNoselectedBtn(["firstBtn3", "secondBtn3"]);
-};
 
-// 4 QUESTION
-
-let selectBtn4 = "",
-    nameSelectedBtn4 = "";
-
-document.getElementById("firstBtn4").onclick = function () {
-    selectBtn4 = "wrong";
-    nameSelectedBtn4 = "firstBtn4";
-
-    commonForSelectBtn("firstBtn4");
-    commonForNoselectedBtn(["secondBtn4"]);
-};
-
-document.getElementById("secondBtn4").onclick = function () {
-    selectBtn4 = "right";
-    nameSelectedBtn4 = "secondBtn4";
-
-    commonForSelectBtn("secondBtn4");
-    commonForNoselectedBtn(["firstBtn4"]);
-};
-
-// 8 QUESTION
-
-let selectedButton8 = {
-    firstBtn8: "",
-    secondBtn8: "",
-    thirdBtn8: "",
-    fourthBtn8: "",
-    fifthBtn8: "",
-};
-
-document.getElementById("firstBtn8").onclick = function () {
-    commonForSelectBtn("firstBtn8");
-
-    selectedButton8.firstBtn8 = "wrong";
-};
-
-document.getElementById("secondBtn8").onclick = function () {
-    commonForSelectBtn("secondBtn8");
-
-    selectedButton8.secondBtn8 = "right";
-};
-
-document.getElementById("thirdBtn8").onclick = function () {
-    commonForSelectBtn("thirdBtn8");
-
-    selectedButton8.thirdBtn8 = "wrong";
-};
-
-document.getElementById("fourthBtn8").onclick = function () {
-    commonForSelectBtn("fourthBtn8");
-
-    selectedButton8.fourthBtn8 = "right";
-};
-
-document.getElementById("fifthBtn8").onclick = function () {
-    commonForSelectBtn("fifthBtn8");
-
-    selectedButton8.fifthBtn8 = "wrong";
-};
-
-// 15 QUESTION
-
-let selectBtn15 = "",
-    nameSelectedBtn15 = "";
-
-document.getElementById("firstBtn15").onclick = function () {
-    selectBtn15 = "wrong";
-    nameSelectedBtn15 = "firstBtn15";
-
-    commonForSelectBtn("firstBtn15");
-    commonForNoselectedBtn(["secondBtn15"]);
-};
-
-document.getElementById("secondBtn15").onclick = function () {
-    selectBtn15 = "right";
-    nameSelectedBtn15 = "secondBtn15";
-
-    commonForSelectBtn("secondBtn15");
-    commonForNoselectedBtn(["firstBtn15"]);
-};
-
-// 18 QUESTION
-
-let selectBtn18 = "",
-    nameSelectedBtn18 = "";
-
-document.getElementById("firstBtn18").onclick = function () {
-    selectBtn18 = "wrong";
-    nameSelectedBtn18 = "firstBtn18";
-
-    commonForSelectBtn("firstBtn18");
-    commonForNoselectedBtn(["secondBtn18", "thirdBtn18"]);
-};
-
-document.getElementById("secondBtn18").onclick = function () {
-    selectBtn18 = "wrong";
-    nameSelectedBtn18 = "secondBtn18";
-
-    commonForSelectBtn("secondBtn18");
-    commonForNoselectedBtn(["firstBtn18", "thirdBtn18"]);
-};
-
-document.getElementById("thirdBtn18").onclick = function () {
-    selectBtn18 = "right";
-    nameSelectedBtn18 = "thirdBtn18";
-
-    commonForSelectBtn("thirdBtn18");
-    commonForNoselectedBtn(["firstBtn18", "secondBtn18"]);
+    selectedButton3.thirdBtn3 = "wrong";
 };
 
 // ------------------------------------------------------------ ALL DRAG AND DROP -------------------------------------------------------------
@@ -1554,118 +1400,6 @@ function question5() {
 
 // 6 QUESTION
 
-let selectedButton6 = {
-    firstBtn6: "right",
-    secondBtn6: "",
-    thirdBtn6: "",
-    fourthBtn6: "",
-    fifthBtn6: "",
-    sixthBtn6: "",
-    seventhBtn6: "",
-    eighthBtn6: "",
-};
-
-document.getElementById("firstBtn6").onclick = function () {
-    document.getElementById("firstBtn6").classList.toggle("selectedCircle");
-
-    selectedButton6.firstBtn6 = "right";
-};
-
-document.getElementById("secondBtn6").onclick = function () {
-    document.getElementById("secondBtn6").classList.toggle("selectedCircle");
-
-    selectedButton6.secondBtn6 = "wrong";
-};
-
-document.getElementById("thirdBtn6").onclick = function () {
-    document.getElementById("thirdBtn6").classList.toggle("selectedCircle");
-
-    selectedButton6.thirdBtn6 = "right";
-};
-
-document.getElementById("fourthBtn6").onclick = function () {
-    document.getElementById("fourthBtn6").classList.toggle("selectedCircle");
-
-    selectedButton6.fourthBtn6 = "wrong";
-};
-
-document.getElementById("fifthBtn6").onclick = function () {
-    document.getElementById("fifthBtn6").classList.toggle("selectedCircle");
-
-    selectedButton6.fifthBtn6 = "right";
-};
-
-document.getElementById("sixthBtn6").onclick = function () {
-    document.getElementById("sixthBtn6").classList.toggle("selectedCircle");
-
-    selectedButton6.sixthBtn6 = "wrong";
-};
-
-document.getElementById("seventhBtn6").onclick = function () {
-    document.getElementById("seventhBtn6").classList.toggle("selectedCircle");
-
-    selectedButton6.seventhBtn6 = "right";
-};
-
-document.getElementById("eighthBtn6").onclick = function () {
-    document.getElementById("eighthBtn6").classList.toggle("selectedCircle");
-
-    selectedButton6.eighthBtn6 = "wrong";
-};
-
-function question6() {
-    let selectedButtons = [],
-        namesSelectedButtons = [],
-        isTheArrayEmpty = 0;
-
-    for (let key in selectedButton6) {
-        if (selectedButton6[key] !== "") {
-            selectedButtons.push(selectedButton6[key]);
-            namesSelectedButtons.push(key);
-            isTheArrayEmpty++;
-        }
-    }
-
-    if (isTheArrayEmpty > 0) {
-        namesSelectedButtons.map((el, index) => {
-            if (selectedButtons[index] === "wrong") {
-                document.getElementById(el).style.border = "2px solid #ED7777";
-            } else {
-                document.getElementById(el).style.border = "2px solid #48B736";
-            }
-        });
-
-        // выносим общий статус к номеру вопроса
-
-        if (
-            selectedButton6.firstBtn6 === "right" &&
-            selectedButton6.thirdBtn6 === "right" &&
-            selectedButton6.fifthBtn6 === "right" &&
-            selectedButton6.seventhBtn6 === "right"
-        ) {
-            addImage(
-                "success",
-                document.getElementsByClassName("question6"),
-                "app6",
-                6
-            );
-        } else {
-            addImage(
-                "failure",
-                document.getElementsByClassName("question6"),
-                "app6",
-                6
-            );
-
-            //addCorrectAnswerQuestion6();
-        }
-    } else {
-        document.getElementById("firstBtn6").classList.remove("selectedCircle");
-        document.getElementsByClassName("content6")[0].style.border =
-            "1px solid #FFB47D";
-    }
-}
-
 // 7 QUESTION
 
 let numbers7 = {
@@ -2362,93 +2096,6 @@ function question16() {
 
 // 17 QUESTION
 
-let selectBtn17 = "right",
-    btnSelectedName17;
-
-document.getElementById("firstCollection17").onclick = function () {
-    document
-        .getElementById("firstCollection17")
-        .classList.toggle("selectedPicture17");
-    document
-        .getElementById("secondCollection17")
-        .classList.remove("selectedPicture17");
-    document
-        .getElementById("thirdCollection17")
-        .classList.remove("selectedPicture17");
-
-    selectBtn17 = "right";
-    btnSelectedName17 = "firstCollection17";
-};
-
-document.getElementById("secondCollection17").onclick = function () {
-    document
-        .getElementById("secondCollection17")
-        .classList.toggle("selectedPicture17");
-    document
-        .getElementById("firstCollection17")
-        .classList.remove("selectedPicture17");
-    document
-        .getElementById("thirdCollection17")
-        .classList.remove("selectedPicture17");
-
-    selectBtn17 = "wrong";
-    btnSelectedName17 = "secondCollection17";
-};
-
-document.getElementById("thirdCollection17").onclick = function () {
-    document
-        .getElementById("thirdCollection17")
-        .classList.toggle("selectedPicture17");
-    document
-        .getElementById("firstCollection17")
-        .classList.remove("selectedPicture17");
-    document
-        .getElementById("secondCollection17")
-        .classList.remove("selectedPicture17");
-
-    selectBtn17 = "wrong";
-    btnSelectedName17 = "thirdCollection17";
-};
-
-function question17() {
-    if (btnSelectedName17) {
-        if (selectBtn17 === "right") {
-            document
-                .getElementById(btnSelectedName17)
-                .classList.toggle("success17");
-        } else {
-            document
-                .getElementById(btnSelectedName17)
-                .classList.toggle("error17");
-        }
-
-        if (selectBtn17 === "right") {
-            addImage(
-                "success",
-                document.getElementsByClassName("question17"),
-                "app17",
-                17
-            );
-        } else {
-            addImage(
-                "failure",
-                document.getElementsByClassName("question17"),
-                "app17",
-                17
-            );
-
-            //addCorrectAnswerQuestion17();
-        }
-    } else {
-        document
-            .getElementById("firstCollection17")
-            .classList.remove("selectedPicture17");
-
-        document.getElementsByClassName("bottomRow17")[0].style.border =
-            "1px solid #FFB47D";
-    }
-}
-
 // 18 QUESTION
 
 function question18() {
@@ -2488,93 +2135,6 @@ function question18() {
 }
 
 // 19 QUESTION
-
-let selectBtn19 = "right",
-    btnSelectedName19;
-
-document.getElementById("firstCollection19").onclick = function () {
-    document
-        .getElementById("firstCollection19")
-        .classList.toggle("selectedPicture19");
-    document
-        .getElementById("secondCollection19")
-        .classList.remove("selectedPicture19");
-    document
-        .getElementById("thirdCollection19")
-        .classList.remove("selectedPicture19");
-
-    selectBtn19 = "wrong";
-    btnSelectedName19 = "firstCollection19";
-};
-
-document.getElementById("secondCollection19").onclick = function () {
-    document
-        .getElementById("secondCollection19")
-        .classList.toggle("selectedPicture19");
-    document
-        .getElementById("firstCollection19")
-        .classList.remove("selectedPicture19");
-    document
-        .getElementById("thirdCollection19")
-        .classList.remove("selectedPicture19");
-
-    selectBtn19 = "wrong";
-    btnSelectedName19 = "secondCollection19";
-};
-
-document.getElementById("thirdCollection19").onclick = function () {
-    document
-        .getElementById("thirdCollection19")
-        .classList.toggle("selectedPicture19");
-    document
-        .getElementById("firstCollection19")
-        .classList.remove("selectedPicture19");
-    document
-        .getElementById("secondCollection19")
-        .classList.remove("selectedPicture19");
-
-    selectBtn19 = "right";
-    btnSelectedName19 = "thirdCollection19";
-};
-
-function question19() {
-    if (btnSelectedName19) {
-        if (selectBtn19 === "right") {
-            document
-                .getElementById(btnSelectedName19)
-                .classList.toggle("success19");
-        } else {
-            document
-                .getElementById(btnSelectedName19)
-                .classList.toggle("error19");
-        }
-
-        if (selectBtn19 === "right") {
-            addImage(
-                "success",
-                document.getElementsByClassName("question19"),
-                "app19",
-                19
-            );
-        } else {
-            addImage(
-                "failure",
-                document.getElementsByClassName("question19"),
-                "app19",
-                19
-            );
-
-            //addCorrectAnswerQuestion19();
-        }
-    } else {
-        document
-            .getElementById("thirdCollection19")
-            .classList.remove("selectedPicture19");
-
-        document.getElementsByClassName("content19")[0].style.border =
-            "1px solid #FFB47D";
-    }
-}
 
 // 20 QUESTION
 
@@ -2857,7 +2417,8 @@ function question23() {
 // RESULT
 
 document.getElementById("submit").onclick = function () {
-    question1();
+    // question1();
+    addCorrectAnswerQuestion1();
     // question2();
     // question3();
     // question4();
