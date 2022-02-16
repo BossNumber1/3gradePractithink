@@ -64,7 +64,7 @@ function addMiniIcon(elem, status) {
     }
 
     if (elem.parentElement.parentElement.className === "content2") {
-        objDiv.style.marginTop = "-50px";
+        objDiv.style.marginTop = "-25px";
         objDiv.style.marginLeft =
             elem.offsetLeft + widthAdjacentElement / 2 - 7 + "px";
     } else if (elem.parentElement.parentElement.className === "content6") {
@@ -1106,8 +1106,6 @@ function addCorrectAnswerQuestion23() {
     );
 }
 
-// gettingDataFromFields(3, [3, 6, 18], 1, numbers1);
-// gettingDataFromFields(3, [45, 5, 9], 2, numbers2);
 // gettingDataFromFields(4, [6, 2, 12, 3], 4, numbers4);
 // gettingDataFromFields(1, [60], 7, numbers7);
 // gettingDataFromFields(1, [2], 12, numbers12);
@@ -1176,7 +1174,7 @@ let numbers2 = {
     thirdNumber: "",
 };
 
-// gettingDataFromFields(3, [2, 9, 16], 2, numbers2);
+gettingDataFromFields(3, [45, 5, 9], 2, numbers2);
 
 function question2() {
     if (
@@ -1207,7 +1205,7 @@ function question2() {
                 2
             );
 
-            //addCorrectAnswerQuestion2();
+            addCorrectAnswerQuestion2();
         }
     } else {
         highlightUnselectedBlocks(3, 2, numbers2);
@@ -2398,7 +2396,7 @@ function question23() {
 
 document.getElementById("submit").onclick = function () {
     question1();
-    // question2();
+    question2();
     // question3();
     // question4();
     // question5();
