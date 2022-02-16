@@ -57,6 +57,12 @@ function addMiniIcon(elem, status) {
     objDiv.style.width = widthAdjacentElement;
     objDiv.style.position = "absolute";
 
+    if (
+        elem.parentElement.parentElement.parentElement.className === "content1"
+    ) {
+        objDiv.style.top = "40px";
+    }
+
     if (elem.parentElement.parentElement.className === "content2") {
         objDiv.style.marginTop = "-50px";
         objDiv.style.marginLeft =
@@ -1100,39 +1106,46 @@ function addCorrectAnswerQuestion23() {
     );
 }
 
+// gettingDataFromFields(3, [3, 6, 18], 1, numbers1);
+// gettingDataFromFields(3, [45, 5, 9], 2, numbers2);
+// gettingDataFromFields(4, [6, 2, 12, 3], 4, numbers4);
+// gettingDataFromFields(1, [60], 7, numbers7);
+// gettingDataFromFields(1, [2], 12, numbers12);
+// gettingDataFromFields(3, [1, 1, 2], 13, numbers13);
+// gettingDataFromFields(4, [1, 2, 4, 6], 14, numbers14);
+// gettingDataFromFields(1, ["01 : 10"], 15, numbers15);
+// gettingDataFromFields(1, [90], 16, numbers16);
+// gettingDataFromFields(3, [12, 6, 49], 19, numbers19);
+// gettingDataFromFields(1, [4], 20, numbers20);
+// gettingDataFromFields(1, [12], 21, numbers21);
+// gettingDataFromFields(1, [81], 22, numbers22);
+
 // --------------------------------------------------------------------- validation of input fields ----------------------------------------------
 
 // 1 QUESTION
 
+let numbers1 = {
+    firstNumber: "",
+    secondNumber: "",
+    thirdNumber: "",
+};
+
+gettingDataFromFields(3, [3, 6, 18], 1, numbers1);
+
 function question1() {
-    let selectedButtons = [],
-        namesSelectedButtons = [],
-        isTheArrayEmpty = 0;
-
-    for (let key in selectedButton1) {
-        if (selectedButton1[key] !== "") {
-            selectedButtons.push(selectedButton1[key]);
-            namesSelectedButtons.push(key);
-            isTheArrayEmpty++;
-        }
-    }
-
-    if (isTheArrayEmpty > 0) {
-        namesSelectedButtons.map((el, index) => {
-            succerror(
-                document.getElementById(el),
-                selectedButtons[index] === "wrong"
-            );
-        });
+    if (
+        numbers1.firstNumber != "" &&
+        numbers1.secondNumber != "" &&
+        numbers1.thirdNumber != ""
+    ) {
+        succerrorAndCreateMiniIcon(3, 1, numbers1);
 
         // выносим общий статус к номеру вопроса
 
         if (
-            selectedButton1.firstBtn1 !== "" &&
-            selectedButton1.secondBtn1 !== "" &&
-            selectedButton1.thirdBtn1 !== "" &&
-            selectedButton1.fourthBtn1 !== "" &&
-            selectedButton1.fifthBtn1 !== ""
+            numbers1.firstNumber === "right" &&
+            numbers1.secondNumber === "right" &&
+            numbers1.thirdNumber === "right"
         ) {
             addImage(
                 "success",
@@ -1141,33 +1154,6 @@ function question1() {
                 1
             );
         } else {
-            // подсветим невыбранные блоки
-            if (selectedButton1.firstBtn1 === "") {
-                document.getElementById("firstBtn1").style.border =
-                    "2px solid #FFB47D";
-            }
-
-            if (selectedButton1.secondBtn1 === "") {
-                document.getElementById("secondBtn1").style.border =
-                    "2px solid #FFB47D";
-            }
-
-            if (selectedButton1.thirdBtn1 === "") {
-                document.getElementById("thirdBtn1").style.border =
-                    "2px solid #FFB47D";
-            }
-
-            if (selectedButton1.fourthBtn1 === "") {
-                document.getElementById("fourthBtn1").style.border =
-                    "2px solid #FFB47D";
-            }
-
-            if (selectedButton1.fifthBtn1 === "") {
-                document.getElementById("fifthBtn1").style.border =
-                    "2px solid #FFB47D";
-            }
-
-            // придадим статуса
             addImage(
                 "failure",
                 document.getElementsByClassName("question1"),
@@ -1175,16 +1161,10 @@ function question1() {
                 1
             );
 
-            //addCorrectAnswerQuestion1();
+            addCorrectAnswerQuestion1();
         }
     } else {
-        document.getElementById("firstBtn1").style.border = "2px solid #FFB47D";
-        document.getElementById("secondBtn1").style.border =
-            "2px solid #FFB47D";
-        document.getElementById("thirdBtn1").style.border = "2px solid #FFB47D";
-        document.getElementById("fourthBtn1").style.border =
-            "2px solid #FFB47D";
-        document.getElementById("fifthBtn1").style.border = "2px solid #FFB47D";
+        highlightUnselectedBlocks(3, 1, numbers1);
     }
 }
 
@@ -2417,50 +2397,27 @@ function question23() {
 // RESULT
 
 document.getElementById("submit").onclick = function () {
-    // question1();
-    addCorrectAnswerQuestion1();
+    question1();
     // question2();
-    addCorrectAnswerQuestion2();
     // question3();
-    addCorrectAnswerQuestion3();
     // question4();
-    addCorrectAnswerQuestion4();
     // question5();
-    addCorrectAnswerQuestion5();
     // question6();
-    addCorrectAnswerQuestion6();
     // question7();
-    addCorrectAnswerQuestion7();
     // question8();
-    addCorrectAnswerQuestion8();
     // question9();
-    addCorrectAnswerQuestion9();
     // question10();
-    addCorrectAnswerQuestion10();
     // question11();
-    addCorrectAnswerQuestion11();
     // question12();
-    addCorrectAnswerQuestion12();
     // question13();
-    addCorrectAnswerQuestion13();
     // question14();
-    addCorrectAnswerQuestion14();
     // question15();
-    addCorrectAnswerQuestion15();
     // question16();
-    addCorrectAnswerQuestion16();
     // question17();
-    addCorrectAnswerQuestion17();
     // question18();
-    addCorrectAnswerQuestion18();
     // question19();
-    addCorrectAnswerQuestion19();
     // question20();
-    addCorrectAnswerQuestion20();
     // question21();
-    addCorrectAnswerQuestion21();
     // question22();
-    addCorrectAnswerQuestion22();
     // question23();
-    addCorrectAnswerQuestion23();
 };
