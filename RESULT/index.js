@@ -1106,7 +1106,6 @@ function addCorrectAnswerQuestion23() {
     );
 }
 
-// gettingDataFromFields(4, [6, 2, 12, 3], 4, numbers4);
 // gettingDataFromFields(1, [60], 7, numbers7);
 // gettingDataFromFields(1, [2], 12, numbers12);
 // gettingDataFromFields(3, [1, 1, 2], 13, numbers13);
@@ -1238,7 +1237,7 @@ function question3() {
                 3
             );
 
-            //addCorrectAnswerQuestion3();
+            addCorrectAnswerQuestion3();
         }
     } else {
         document.getElementById("firstBtn3").style.border = "2px solid #FFB47D";
@@ -1254,29 +1253,27 @@ let numbers4 = {
     firstNumber: "",
     secondNumber: "",
     thirdNumber: "",
+    fourthNumber: "",
 };
 
-// gettingDataFromFields(3, [6, 6, 12], 4, numbers4);
+gettingDataFromFields(4, [6, 2, 12, 3], 4, numbers4);
 
 function question4() {
     if (
-        selectBtn4 !== "" &&
-        numbers4.firstNumber !== "" &&
-        numbers4.secondNumber !== "" &&
-        numbers4.thirdNumber !== ""
+        numbers4.firstNumber != "" &&
+        numbers4.secondNumber != "" &&
+        numbers4.thirdNumber != "" &&
+        numbers4.fourthNumber != ""
     ) {
-        succerror(
-            document.getElementById(nameSelectedBtn4),
-            selectBtn4 === "wrong"
-        );
+        succerrorAndCreateMiniIcon(4, 4, numbers4);
 
         // выносим общий статус к номеру вопроса
 
         if (
-            selectBtn4 === "right" &&
             numbers4.firstNumber === "right" &&
             numbers4.secondNumber === "right" &&
-            numbers4.thirdNumber === "right"
+            numbers4.thirdNumber === "right" &&
+            numbers4.fourthNumber === "right"
         ) {
             addImage(
                 "success",
@@ -1285,21 +1282,6 @@ function question4() {
                 4
             );
         } else {
-            succerror(
-                document.getElementById("firstNumber4"),
-                numbers4.firstNumber === "wrong"
-            );
-
-            succerror(
-                document.getElementById("secondNumber4"),
-                numbers4.secondNumber === "wrong"
-            );
-
-            succerror(
-                document.getElementById("thirdNumber4"),
-                numbers4.thirdNumber === "wrong"
-            );
-
             addImage(
                 "failure",
                 document.getElementsByClassName("question4"),
@@ -1307,17 +1289,10 @@ function question4() {
                 4
             );
 
-            //addCorrectAnswerQuestion4();
+            addCorrectAnswerQuestion4();
         }
     } else {
-        if (selectBtn4 === "") {
-            document.getElementById("firstBtn4").style.border =
-                "2px solid #FFB47D";
-            document.getElementById("secondBtn4").style.border =
-                "2px solid #FFB47D";
-        }
-
-        highlightUnselectedBlocks(3, 4, numbers4);
+        highlightUnselectedBlocks(4, 4, numbers4);
     }
 }
 
@@ -2398,7 +2373,7 @@ document.getElementById("submit").onclick = function () {
     question1();
     question2();
     // question3();
-    // question4();
+    question4();
     // question5();
     // question6();
     // question7();
