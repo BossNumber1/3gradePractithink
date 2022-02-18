@@ -1106,7 +1106,6 @@ function addCorrectAnswerQuestion23() {
     );
 }
 
-// gettingDataFromFields(1, [2], 12, numbers12);
 // gettingDataFromFields(3, [1, 1, 2], 13, numbers13);
 // gettingDataFromFields(4, [1, 2, 4, 6], 14, numbers14);
 // gettingDataFromFields(1, ["01 : 10"], 15, numbers15);
@@ -1680,44 +1679,15 @@ let numbers12 = {
     firstNumber: "",
 };
 
-// gettingDataFromFields(1, [10], 12, numbers12);
+gettingDataFromFields(1, [2], 12, numbers12);
 
 function question12() {
-    // получаем содежимое блоков
-    let firstPlace12 =
-        document.getElementsByClassName("firstRow12")[0].children[0].id;
-    let secondPlace12 =
-        document.getElementsByClassName("firstRow12")[0].children[1].id;
-    let thirdPlace12 =
-        document.getElementsByClassName("firstRow12")[0].children[2].id;
-    let fourthPlace12 =
-        document.getElementsByClassName("firstRow12")[0].children[3].id;
-    let fifthPlace12 =
-        document.getElementsByClassName("firstRow12")[0].children[4].id;
-    let sixthPlace12 =
-        document.getElementsByClassName("firstRow12")[0].children[5].id;
-
-    if (
-        numbers12.firstNumber !== "" &&
-        firstPlace12 !== "firstEmpty12" &&
-        secondPlace12 !== "secondEmpty12" &&
-        thirdPlace12 !== "thirdEmpty12" &&
-        fourthPlace12 !== "fourthEmpty12" &&
-        fifthPlace12 !== "fifthEmpty12" &&
-        sixthPlace12 !== "sixthEmpty12"
-    ) {
+    if (numbers12.firstNumber != "") {
         succerrorAndCreateMiniIcon(1, 12, numbers12);
 
-        // проверяем на верность для создания статуса
-        if (
-            numbers12.firstNumber === "right" &&
-            firstPlace12 === "firstBtn12" &&
-            secondPlace12 === "fourthBtn12" &&
-            thirdPlace12 === "sixthBtn12" &&
-            fourthPlace12 === "secondBtn12" &&
-            fifthPlace12 === "fifthBtn12" &&
-            sixthPlace12 === "thirdBtn12"
-        ) {
+        // выносим общий статус к номеру вопроса
+
+        if (numbers12.firstNumber === "right") {
             addImage(
                 "success",
                 document.getElementsByClassName("question12"),
@@ -1725,78 +1695,6 @@ function question12() {
                 12
             );
         } else {
-            if (firstPlace12 !== "firstBtn12") {
-                document.getElementById(firstPlace12).style.border =
-                    "2px solid #ED7777";
-
-                addMiniIcon(document.getElementById(firstPlace12), "failure");
-            } else if (firstPlace12 === "firstBtn12") {
-                document.getElementById(firstPlace12).style.border =
-                    "2px solid #9DD765";
-
-                addMiniIcon(document.getElementById(firstPlace12), "success");
-            }
-
-            if (secondPlace12 !== "fourthBtn12") {
-                document.getElementById(secondPlace12).style.border =
-                    "2px solid #ED7777";
-
-                addMiniIcon(document.getElementById(secondPlace12), "failure");
-            } else if (secondPlace12 === "fourthBtn12") {
-                document.getElementById(secondPlace12).style.border =
-                    "2px solid #9DD765";
-
-                addMiniIcon(document.getElementById(secondPlace12), "success");
-            }
-
-            if (thirdPlace12 !== "sixthBtn12") {
-                document.getElementById(thirdPlace12).style.border =
-                    "2px solid #ED7777";
-
-                addMiniIcon(document.getElementById(thirdPlace12), "failure");
-            } else if (thirdPlace12 === "sixthBtn12") {
-                document.getElementById(thirdPlace12).style.border =
-                    "2px solid #9DD765";
-
-                addMiniIcon(document.getElementById(thirdPlace12), "success");
-            }
-
-            if (fourthPlace12 !== "secondBtn12") {
-                document.getElementById(fourthPlace12).style.border =
-                    "2px solid #ED7777";
-
-                addMiniIcon(document.getElementById(fourthPlace12), "failure");
-            } else if (fourthPlace12 === "secondBtn12") {
-                document.getElementById(fourthPlace12).style.border =
-                    "2px solid #9DD765";
-
-                addMiniIcon(document.getElementById(fourthPlace12), "success");
-            }
-
-            if (fifthPlace12 !== "fifthBtn12") {
-                document.getElementById(fifthPlace12).style.border =
-                    "2px solid #ED7777";
-
-                addMiniIcon(document.getElementById(fifthPlace12), "failure");
-            } else if (fifthPlace12 === "fifthBtn12") {
-                document.getElementById(fifthPlace12).style.border =
-                    "2px solid #9DD765";
-
-                addMiniIcon(document.getElementById(fifthPlace12), "success");
-            }
-
-            if (sixthPlace12 !== "thirdBtn12") {
-                document.getElementById(sixthPlace12).style.border =
-                    "2px solid #ED7777";
-
-                addMiniIcon(document.getElementById(sixthPlace12), "failure");
-            } else if (sixthPlace12 === "thirdBtn12") {
-                document.getElementById(sixthPlace12).style.border =
-                    "2px solid #9DD765";
-
-                addMiniIcon(document.getElementById(sixthPlace12), "success");
-            }
-
             addImage(
                 "failure",
                 document.getElementsByClassName("question12"),
@@ -1804,20 +1702,9 @@ function question12() {
                 12
             );
 
-            //addCorrectAnswerQuestion12();
+            addCorrectAnswerQuestion12();
         }
     } else {
-        if (
-            firstPlace12 === "firstEmpty12" &&
-            secondPlace12 === "secondEmpty12" &&
-            thirdPlace12 === "thirdEmpty12" &&
-            fourthPlace12 === "fourthEmpty12" &&
-            fifthPlace12 === "fifthEmpty12" &&
-            sixthPlace12 === "sixthEmpty12"
-        ) {
-            highlightingUnfillededBlocks(6, 12);
-        }
-
         highlightUnselectedBlocks(1, 12, numbers12);
     }
 }
@@ -2370,7 +2257,7 @@ document.getElementById("submit").onclick = function () {
     // question9();
     // question10();
     // question11();
-    // question12();
+    question12();
     // question13();
     // question14();
     // question15();
