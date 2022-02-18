@@ -1108,7 +1108,6 @@ function addCorrectAnswerQuestion23() {
     );
 }
 
-// gettingDataFromFields(1, [90], 16, numbers16);
 // gettingDataFromFields(3, [12, 6, 49], 19, numbers19);
 // gettingDataFromFields(1, [4], 20, numbers20);
 // gettingDataFromFields(1, [12], 21, numbers21);
@@ -1863,30 +1862,17 @@ function question15() {
 
 let numbers16 = {
     firstNumber: "",
-    secondNumber: "",
-    thirdNumber: "",
-    fourthNumber: "",
 };
 
-// gettingDataFromFields(4, ["12:10", "08:55", "05:50", "12:30"], 16, numbers16);
+gettingDataFromFields(1, [90], 16, numbers16);
 
 function question16() {
-    if (
-        numbers16.firstNumber != "" &&
-        numbers16.secondNumber != "" &&
-        numbers16.thirdNumber != "" &&
-        numbers16.fourthNumber != ""
-    ) {
-        succerrorAndCreateMiniIcon(4, 16, numbers16);
+    if (numbers16.firstNumber != "") {
+        succerrorAndCreateMiniIcon(1, 16, numbers16);
 
         // выносим общий статус к номеру вопроса
 
-        if (
-            numbers16.firstNumber === "right" &&
-            numbers16.secondNumber === "right" &&
-            numbers16.thirdNumber === "right" &&
-            numbers16.fourthNumber === "right"
-        ) {
+        if (numbers16.firstNumber === "right") {
             addImage(
                 "success",
                 document.getElementsByClassName("question16"),
@@ -1901,10 +1887,10 @@ function question16() {
                 16
             );
 
-            //addCorrectAnswerQuestion16();
+            addCorrectAnswerQuestion16();
         }
     } else {
-        highlightUnselectedBlocks(4, 16, numbers16);
+        highlightUnselectedBlocks(1, 16, numbers16);
     }
 }
 
@@ -2246,7 +2232,7 @@ document.getElementById("submit").onclick = function () {
     question13();
     question14();
     question15();
-    // question16();
+    question16();
     // question17();
     // question18();
     // question19();
