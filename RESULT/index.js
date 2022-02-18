@@ -89,10 +89,8 @@ function addMiniIcon(elem, status) {
         objDiv.style.marginTop = "-25px";
     }
 
-    if (
-        elem.parentElement.parentElement.parentElement.className === "content13"
-    ) {
-        objDiv.style.marginTop = "-25px";
+    if (elem.parentElement.className === "content13") {
+        objDiv.style.marginTop = "-85px";
     }
 
     if (elem.parentElement.parentElement.className === "fourthRow11") {
@@ -1106,7 +1104,6 @@ function addCorrectAnswerQuestion23() {
     );
 }
 
-// gettingDataFromFields(3, [1, 1, 2], 13, numbers13);
 // gettingDataFromFields(4, [1, 2, 4, 6], 14, numbers14);
 // gettingDataFromFields(1, ["01 : 10"], 15, numbers15);
 // gettingDataFromFields(1, [90], 16, numbers16);
@@ -1709,10 +1706,6 @@ function question12() {
     }
 }
 
-// ------------------------------------------------------------- Rotate and moved ----------------------------------------------------------------
-
-// 13 QUESTION
-
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 
 // 13 QUESTION
@@ -1721,61 +1714,24 @@ let numbers13 = {
     firstNumber: "",
     secondNumber: "",
     thirdNumber: "",
-    fourthNumber: "",
-    fifthNumber: "",
-    sixthNumber: "",
 };
 
-// gettingDataFromFields(6, [5, 0, 2, "1/2", 3, 0], 13, numbers13);
+gettingDataFromFields(3, [1, 1, 2], 13, numbers13);
 
 function question13() {
     if (
-        numbers13.firstNumber !== "" &&
-        numbers13.secondNumber !== "" &&
-        numbers13.thirdNumber !== "" &&
-        numbers13.fourthNumber !== "" &&
-        numbers13.fifthNumber !== "" &&
-        numbers13.sixthNumber !== ""
+        numbers13.firstNumber != "" &&
+        numbers13.secondNumber != "" &&
+        numbers13.thirdNumber != ""
     ) {
-        succerror(
-            document.getElementById("firstNumber13"),
-            numbers13.firstNumber === "wrong"
-        );
-
-        succerror(
-            document.getElementById("secondNumber13"),
-            numbers13.secondNumber === "wrong"
-        );
-
-        succerror(
-            document.getElementById("thirdNumber13"),
-            numbers13.thirdNumber === "wrong"
-        );
-
-        succerror(
-            document.getElementById("fourthNumber13"),
-            numbers13.fourthNumber === "wrong"
-        );
-
-        succerror(
-            document.getElementById("fifthNumber13"),
-            numbers13.thirdNumber === "wrong"
-        );
-
-        succerror(
-            document.getElementById("sixthNumber13"),
-            numbers13.secondNumber === "wrong"
-        );
+        succerrorAndCreateMiniIcon(3, 13, numbers13);
 
         // выносим общий статус к номеру вопроса
 
         if (
             numbers13.firstNumber === "right" &&
             numbers13.secondNumber === "right" &&
-            numbers13.thirdNumber === "right" &&
-            numbers13.fourthNumber === "right" &&
-            numbers13.fifthNumber === "right" &&
-            numbers13.sixthNumber === "right"
+            numbers13.thirdNumber === "right"
         ) {
             addImage(
                 "success",
@@ -1791,10 +1747,10 @@ function question13() {
                 13
             );
 
-            //addCorrectAnswerQuestion13();
+            addCorrectAnswerQuestion13();
         }
     } else {
-        highlightUnselectedBlocks(6, 13, numbers13);
+        highlightUnselectedBlocks(3, 13, numbers13);
     }
 }
 
@@ -2258,7 +2214,7 @@ document.getElementById("submit").onclick = function () {
     // question10();
     // question11();
     question12();
-    // question13();
+    question13();
     // question14();
     // question15();
     // question16();
