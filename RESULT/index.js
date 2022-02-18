@@ -89,6 +89,10 @@ function addMiniIcon(elem, status) {
         objDiv.style.marginTop = "-25px";
     }
 
+    if (elem.parentElement.parentElement.className === "content15") {
+        objDiv.style.marginTop = "-25px";
+    }
+
     if (elem.parentElement.className === "content13") {
         objDiv.style.marginTop = "-85px";
     }
@@ -1104,7 +1108,6 @@ function addCorrectAnswerQuestion23() {
     );
 }
 
-// gettingDataFromFields(1, ["01 : 10"], 15, numbers15);
 // gettingDataFromFields(1, [90], 16, numbers16);
 // gettingDataFromFields(3, [12, 6, 49], 19, numbers19);
 // gettingDataFromFields(1, [4], 20, numbers20);
@@ -1822,16 +1825,19 @@ function question14() {
 
 // 15 QUESTION
 
+let numbers15 = {
+    firstNumber: "",
+};
+
+gettingDataFromFields(1, ["01 : 10"], 15, numbers15);
+
 function question15() {
-    if (selectBtn15 !== "") {
-        succerror(
-            document.getElementById(nameSelectedBtn15),
-            selectBtn15 === "wrong"
-        );
+    if (numbers15.firstNumber != "") {
+        succerrorAndCreateMiniIcon(1, 15, numbers15);
 
         // выносим общий статус к номеру вопроса
 
-        if (selectBtn15 === "right") {
+        if (numbers15.firstNumber === "right") {
             addImage(
                 "success",
                 document.getElementsByClassName("question15"),
@@ -1846,13 +1852,10 @@ function question15() {
                 15
             );
 
-            //addCorrectAnswerQuestion15();
+            addCorrectAnswerQuestion15();
         }
     } else {
-        document.getElementById("firstBtn15").style.border =
-            "2px solid #FFB47D";
-        document.getElementById("secondBtn15").style.border =
-            "2px solid #FFB47D";
+        highlightUnselectedBlocks(1, 15, numbers15);
     }
 }
 
@@ -2242,7 +2245,7 @@ document.getElementById("submit").onclick = function () {
     question12();
     question13();
     question14();
-    // question15();
+    question15();
     // question16();
     // question17();
     // question18();
