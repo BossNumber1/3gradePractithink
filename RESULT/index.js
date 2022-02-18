@@ -1108,7 +1108,6 @@ function addCorrectAnswerQuestion23() {
     );
 }
 
-// gettingDataFromFields(3, [12, 6, 49], 19, numbers19);
 // gettingDataFromFields(1, [4], 20, numbers20);
 // gettingDataFromFields(1, [12], 21, numbers21);
 // gettingDataFromFields(1, [81], 22, numbers22);
@@ -1936,6 +1935,63 @@ function question18() {
 
 // 19 QUESTION
 
+let numbers19 = {
+    firstNumber: "",
+    secondNumber: "",
+    thirdNumber: "",
+};
+
+gettingDataFromFields(3, [12, 6, 49], 19, numbers19);
+
+function question19() {
+    if (
+        numbers19.firstNumber != "" &&
+        numbers19.secondNumber != "" &&
+        numbers19.thirdNumber != ""
+    ) {
+        succerror(
+            document.getElementById("firstNumber19"),
+            numbers19.firstNumber === "wrong"
+        );
+
+        succerror(
+            document.getElementById("secondNumber19"),
+            numbers19.secondNumber === "wrong"
+        );
+
+        succerror(
+            document.getElementById("thirdNumber19"),
+            numbers19.thirdNumber === "wrong"
+        );
+
+        // выносим общий статус к номеру вопроса
+
+        if (
+            numbers19.firstNumber === "right" &&
+            numbers19.secondNumber === "right" &&
+            numbers19.thirdNumber === "right"
+        ) {
+            addImage(
+                "success",
+                document.getElementsByClassName("question19"),
+                "app19",
+                19
+            );
+        } else {
+            addImage(
+                "failure",
+                document.getElementsByClassName("question19"),
+                "app19",
+                19
+            );
+
+            addCorrectAnswerQuestion19();
+        }
+    } else {
+        highlightUnselectedBlocks(3, 19, numbers19);
+    }
+}
+
 // 20 QUESTION
 
 let numbers20 = {
@@ -2235,7 +2291,7 @@ document.getElementById("submit").onclick = function () {
     question16();
     // question17();
     // question18();
-    // question19();
+    question19();
     // question20();
     // question21();
     // question22();
