@@ -1106,7 +1106,6 @@ function addCorrectAnswerQuestion23() {
     );
 }
 
-// gettingDataFromFields(1, [60], 7, numbers7);
 // gettingDataFromFields(1, [2], 12, numbers12);
 // gettingDataFromFields(3, [1, 1, 2], 13, numbers13);
 // gettingDataFromFields(4, [1, 2, 4, 6], 14, numbers14);
@@ -1357,27 +1356,17 @@ function question5() {
 
 let numbers7 = {
     firstNumber: "",
-    secondNumber: "",
-    thirdNumber: "",
 };
 
-// gettingDataFromFields(3, [7, 0, 6], 7, numbers7);
+gettingDataFromFields(1, [60], 7, numbers7);
 
 function question7() {
-    if (
-        numbers7.firstNumber != "" &&
-        numbers7.secondNumber != "" &&
-        numbers7.thirdNumber != ""
-    ) {
-        succerrorAndCreateMiniIcon(3, 7, numbers7);
+    if (numbers7.firstNumber != "") {
+        succerrorAndCreateMiniIcon(1, 7, numbers7);
 
         // выносим общий статус к номеру вопроса
 
-        if (
-            numbers7.firstNumber === "right" &&
-            numbers7.secondNumber === "right" &&
-            numbers7.thirdNumber === "right"
-        ) {
+        if (numbers7.firstNumber === "right") {
             addImage(
                 "success",
                 document.getElementsByClassName("question7"),
@@ -1392,10 +1381,10 @@ function question7() {
                 7
             );
 
-            //addCorrectAnswerQuestion7();
+            addCorrectAnswerQuestion7();
         }
     } else {
-        highlightUnselectedBlocks(3, 7, numbers7);
+        highlightUnselectedBlocks(1, 7, numbers7);
     }
 }
 
@@ -2376,7 +2365,7 @@ document.getElementById("submit").onclick = function () {
     question4();
     // question5();
     // question6();
-    // question7();
+    question7();
     // question8();
     // question9();
     // question10();
