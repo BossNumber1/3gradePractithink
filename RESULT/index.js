@@ -1104,7 +1104,6 @@ function addCorrectAnswerQuestion23() {
     );
 }
 
-// gettingDataFromFields(4, [1, 2, 4, 6], 14, numbers14);
 // gettingDataFromFields(1, ["01 : 10"], 15, numbers15);
 // gettingDataFromFields(1, [90], 16, numbers16);
 // gettingDataFromFields(3, [12, 6, 49], 19, numbers19);
@@ -1759,19 +1758,46 @@ function question13() {
 let numbers14 = {
     firstNumber: "",
     secondNumber: "",
+    thirdNumber: "",
+    fourthNumber: "",
 };
 
-// gettingDataFromFields(2, [77, 13], 14, numbers14);
+gettingDataFromFields(4, [1, 2, 4, 6], 14, numbers14);
 
 function question14() {
-    if (numbers14.firstNumber != "" && numbers14.secondNumber != "") {
-        succerrorAndCreateMiniIcon(2, 14, numbers14);
+    if (
+        numbers14.firstNumber != "" &&
+        numbers14.secondNumber != "" &&
+        numbers14.thirdNumber != "" &&
+        numbers14.fourthNumber != ""
+    ) {
+        succerror(
+            document.getElementById("firstNumber14"),
+            numbers14.firstNumber === "wrong"
+        );
+
+        succerror(
+            document.getElementById("secondNumber14"),
+            numbers14.secondNumber === "wrong"
+        );
+
+        succerror(
+            document.getElementById("thirdNumber14"),
+            numbers14.thirdNumber === "wrong"
+        );
+
+        succerror(
+            document.getElementById("fourthNumber14"),
+            numbers14.fourthNumber === "wrong"
+        );
 
         // выносим общий статус к номеру вопроса
 
         if (
             numbers14.firstNumber === "right" &&
-            numbers14.secondNumber === "right"
+            numbers14.secondNumber === "right" &&
+            numbers14.thirdNumber === "right" &&
+            numbers14.fourthNumber === "right"
         ) {
             addImage(
                 "success",
@@ -1787,10 +1813,10 @@ function question14() {
                 14
             );
 
-            //addCorrectAnswerQuestion14();
+            addCorrectAnswerQuestion14();
         }
     } else {
-        highlightUnselectedBlocks(2, 14, numbers14);
+        highlightUnselectedBlocks(4, 14, numbers14);
     }
 }
 
@@ -2215,7 +2241,7 @@ document.getElementById("submit").onclick = function () {
     // question11();
     question12();
     question13();
-    // question14();
+    question14();
     // question15();
     // question16();
     // question17();
