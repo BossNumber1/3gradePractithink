@@ -139,7 +139,10 @@ function addMiniIcon(elem, status) {
         objDiv.style.marginTop = "-43px";
     }
 
-    if (elem.parentElement.parentElement.className === "content20") {
+    if (
+        elem.parentElement.parentElement.className === "content20" ||
+        "content21"
+    ) {
         objDiv.style.marginTop = "-55px";
         objDiv.style.marginLeft =
             elem.offsetLeft + widthAdjacentElement / 2 - 67 + "px";
@@ -1108,7 +1111,6 @@ function addCorrectAnswerQuestion23() {
     );
 }
 
-// gettingDataFromFields(1, [12], 21, numbers21);
 // gettingDataFromFields(1, [81], 22, numbers22);
 
 // --------------------------------------------------------------------- validation of input fields ----------------------------------------------
@@ -2029,58 +2031,19 @@ function question20() {
 
 // 21 QUESTION
 
-function drag21(e) {
-    localStorage.setItem("idOrigin21question2class", e.target.id);
-}
+let numbers21 = {
+    firstNumber: "",
+};
 
-function drop21(e) {
-    // получаем id, позицию и класс текущего
-    let idOrig = localStorage.getItem("idOrigin21question2class");
-    let idCurn = e.target.id;
-    let classCurn = e.target.parentElement.className;
-    let positionOrig = idOrig.slice(-1) - 1;
-
-    // получаем объекты
-    let orgnElement = document.getElementById(idOrig);
-    let crntElement = document.getElementById(idCurn);
-
-    // копируем переносимый объект в новый
-    let copyObj = document.createElement("img");
-    copyObj.src = "./pictures/21que/" + idOrig.slice(0, -1) + ".svg";
-    copyObj.id = idOrig;
-    copyObj.style.cursor = "grab";
-    copyObj.style.marginTop = "10px";
-    copyObj.style.marginLeft = "10px";
-
-    orgnElement.style.opacity = 0.3;
-    orgnElement.parentElement.style.cursor = "default";
-
-    if (orgnElement.parentElement.id === "") {
-        // вставляем переносимый объект в корзину
-        crntElement.appendChild(copyObj);
-    }
-
-    // теперь делаем перенос обратно
-    if (orgnElement.parentElement.id === "basket21") {
-        let crnt =
-            document.getElementsByClassName(classCurn)[0].children[
-                positionOrig
-            ];
-
-        crnt.id = idOrig;
-        crnt.src = "./pictures/21que/" + idOrig.slice(0, -1) + ".svg";
-        crnt.style.cursor = "grab";
-        crnt.style.opacity = 1;
-
-        orgnElement.remove();
-    }
-}
+gettingDataFromFields(1, [12], 21, numbers21);
 
 function question21() {
-    let basket = document.getElementById("basket21");
+    if (numbers21.firstNumber != "") {
+        succerrorAndCreateMiniIcon(1, 21, numbers21);
 
-    if (basket.children.length !== 2) {
-        if (basket.children.length === 8) {
+        // выносим общий статус к номеру вопроса
+
+        if (numbers21.firstNumber === "right") {
             addImage(
                 "success",
                 document.getElementsByClassName("question21"),
@@ -2095,10 +2058,10 @@ function question21() {
                 21
             );
 
-            //addCorrectAnswerQuestion21();
+            addCorrectAnswerQuestion21();
         }
     } else {
-        basket.style.border = "2px solid #FFB47D";
+        highlightUnselectedBlocks(1, 21, numbers21);
     }
 }
 
@@ -2268,7 +2231,7 @@ document.getElementById("submit").onclick = function () {
     // question18();
     question19();
     question20();
-    // question21();
+    question21();
     // question22();
     // question23();
 };
