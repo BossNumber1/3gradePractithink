@@ -139,10 +139,10 @@ function addMiniIcon(elem, status) {
         objDiv.style.marginTop = "-43px";
     }
 
-    if (
-        elem.parentElement.parentElement.parentElement.className === "content20"
-    ) {
+    if (elem.parentElement.parentElement.className === "content20") {
         objDiv.style.marginTop = "-55px";
+        objDiv.style.marginLeft =
+            elem.offsetLeft + widthAdjacentElement / 2 - 67 + "px";
     }
 
     if (
@@ -1108,7 +1108,6 @@ function addCorrectAnswerQuestion23() {
     );
 }
 
-// gettingDataFromFields(1, [4], 20, numbers20);
 // gettingDataFromFields(1, [12], 21, numbers21);
 // gettingDataFromFields(1, [81], 22, numbers22);
 
@@ -1996,37 +1995,17 @@ function question19() {
 
 let numbers20 = {
     firstNumber: "",
-    secondNumber: "",
-    thirdNumber: "",
-    fourthNumber: "",
 };
 
-// gettingDataFromFields(4, [3, 27, 3, 33], 20, numbers20);
+gettingDataFromFields(1, [4], 20, numbers20);
 
 function question20() {
-    // проверяем на присутствие знака
-    let requiredElement = document.getElementsByClassName("forSign20")[0];
-    let selectedSign = requiredElement.textContent.trim();
-
-    if (
-        numbers20.firstNumber != "" &&
-        numbers20.secondNumber != "" &&
-        numbers20.thirdNumber != "" &&
-        numbers20.fourthNumber != "" &&
-        selectedSign != ""
-    ) {
-        succerrorAndCreateMiniIcon(4, 20, numbers20);
-        succerror(requiredElement, selectedSign !== "<");
+    if (numbers20.firstNumber != "") {
+        succerrorAndCreateMiniIcon(1, 20, numbers20);
 
         // выносим общий статус к номеру вопроса
 
-        if (
-            numbers20.firstNumber === "right" &&
-            numbers20.secondNumber === "right" &&
-            numbers20.thirdNumber === "right" &&
-            numbers20.fourthNumber === "right" &&
-            selectedSign === "<"
-        ) {
+        if (numbers20.firstNumber === "right") {
             addImage(
                 "success",
                 document.getElementsByClassName("question20"),
@@ -2041,14 +2020,10 @@ function question20() {
                 20
             );
 
-            //addCorrectAnswerQuestion20();
+            addCorrectAnswerQuestion20();
         }
     } else {
-        highlightUnselectedBlocks(4, 20, numbers20);
-
-        if (selectedSign !== "<") {
-            requiredElement.style.border = "2px solid #FFB47D";
-        }
+        highlightUnselectedBlocks(1, 20, numbers20);
     }
 }
 
@@ -2292,7 +2267,7 @@ document.getElementById("submit").onclick = function () {
     // question17();
     // question18();
     question19();
-    // question20();
+    question20();
     // question21();
     // question22();
     // question23();
