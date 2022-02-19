@@ -156,11 +156,10 @@ function addMiniIcon(elem, status) {
             elem.offsetLeft + widthAdjacentElement / 2 - 27 + "px";
     }
 
-    if (
-        elem.parentElement.parentElement.parentElement.parentElement
-            .className === "content22"
-    ) {
-        objDiv.style.marginTop = "-23px";
+    if (elem.parentElement.className === "content22") {
+        objDiv.style.marginTop = "-55px";
+        objDiv.style.marginLeft =
+            elem.offsetLeft + widthAdjacentElement / 2 - 7 + "px";
     }
 
     objDiv.style.marginRight = rightIndent;
@@ -1110,8 +1109,6 @@ function addCorrectAnswerQuestion23() {
         "contentCorrectAnswer23"
     );
 }
-
-// gettingDataFromFields(1, [81], 22, numbers22);
 
 // --------------------------------------------------------------------- validation of input fields ----------------------------------------------
 
@@ -2069,48 +2066,17 @@ function question21() {
 
 let numbers22 = {
     firstNumber: "",
-    secondNumber: "",
-    thirdNumber: "",
-    fourthNumber: "",
 };
 
-// gettingDataFromFields(4, [7, 3, 4, 2], 22, numbers22);
+gettingDataFromFields(1, [81], 22, numbers22);
 
 function question22() {
-    if (
-        numbers22.firstNumber != "" &&
-        numbers22.secondNumber != "" &&
-        numbers22.thirdNumber != "" &&
-        numbers22.fourthNumber != ""
-    ) {
-        succerror(
-            document.getElementById("firstNumber22"),
-            numbers22.firstNumber === "wrong"
-        );
-
-        succerror(
-            document.getElementById("secondNumber22"),
-            numbers22.secondNumber === "wrong"
-        );
-
-        succerror(
-            document.getElementById("thirdNumber22"),
-            numbers22.thirdNumber === "wrong"
-        );
-
-        succerror(
-            document.getElementById("fourthNumber22"),
-            numbers22.fourthNumber === "wrong"
-        );
+    if (numbers22.firstNumber != "") {
+        succerrorAndCreateMiniIcon(1, 22, numbers22);
 
         // выносим общий статус к номеру вопроса
 
-        if (
-            numbers22.firstNumber === "right" &&
-            numbers22.secondNumber === "right" &&
-            numbers22.thirdNumber === "right" &&
-            numbers22.fourthNumber === "right"
-        ) {
+        if (numbers22.firstNumber === "right") {
             addImage(
                 "success",
                 document.getElementsByClassName("question22"),
@@ -2125,10 +2091,10 @@ function question22() {
                 22
             );
 
-            //addCorrectAnswerQuestion22();
+            addCorrectAnswerQuestion22();
         }
     } else {
-        highlightUnselectedBlocks(4, 22, numbers22);
+        highlightUnselectedBlocks(1, 22, numbers22);
     }
 }
 
@@ -2232,6 +2198,6 @@ document.getElementById("submit").onclick = function () {
     question19();
     question20();
     question21();
-    // question22();
+    question22();
     // question23();
 };
