@@ -141,7 +141,7 @@ function addMiniIcon(elem, status) {
 
     if (
         elem.parentElement.parentElement.className === "content20" ||
-        "content21"
+        elem.parentElement.parentElement.className === "content21"
     ) {
         objDiv.style.marginTop = "-55px";
         objDiv.style.marginLeft =
