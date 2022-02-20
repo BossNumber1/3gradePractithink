@@ -53,7 +53,7 @@
     justify-content: space-between;
 }
 
-.bottomRow3 div {
+.bottomRow3 div:not(.statusMiniIcon) {
     display: flex;
     flex-direction: row;
     justify-content: center;

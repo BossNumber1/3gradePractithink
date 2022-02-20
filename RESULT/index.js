@@ -538,28 +538,31 @@ function commonForNoselectedBtn(arrayBtnsId) {
 
 // 3 QUESTION
 
-let selectedButton3 = {
-    firstBtn3: "",
-    secondBtn3: "",
-    thirdBtn3: "",
-};
+let selectBtn3 = "",
+    nameSelectedBtn3 = "";
 
 document.getElementById("firstBtn3").onclick = function () {
-    commonForSelectBtn("firstBtn3");
+    selectBtn3 = "wrong";
+    nameSelectedBtn3 = "firstBtn3";
 
-    selectedButton3.firstBtn3 = "wrong";
+    commonForSelectBtn("firstBtn3");
+    commonForNoselectedBtn(["secondBtn3", "thirdBtn3"]);
 };
 
 document.getElementById("secondBtn3").onclick = function () {
-    commonForSelectBtn("secondBtn3");
+    selectBtn3 = "right";
+    nameSelectedBtn3 = "secondBtn3";
 
-    selectedButton3.secondBtn3 = "right";
+    commonForSelectBtn("secondBtn3");
+    commonForNoselectedBtn(["firstBtn3", "thirdBtn3"]);
 };
 
 document.getElementById("thirdBtn3").onclick = function () {
-    commonForSelectBtn("thirdBtn3");
+    selectBtn3 = "wrong";
+    nameSelectedBtn3 = "thirdBtn3";
 
-    selectedButton3.thirdBtn3 = "wrong";
+    commonForSelectBtn("thirdBtn3");
+    commonForNoselectedBtn(["firstBtn3", "secondBtn3"]);
 };
 
 // ------------------------------------------------------------ ALL DRAG AND DROP -------------------------------------------------------------
@@ -568,43 +571,6 @@ document.getElementById("thirdBtn3").onclick = function () {
 
 function allowDrop(e) {
     e.preventDefault();
-}
-
-// 3 QUESTION
-
-function drag3(e) {
-    localStorage.setItem("idOrigin3question5class", e.target.id);
-    localStorage.setItem(
-        "textContent3question5class",
-        e.target.textContent.trim()
-    );
-}
-
-function drop3(e) {
-    // получаем текст и id взятого элемента
-    let idOrig = localStorage.getItem("idOrigin3question5class");
-    let textContent = localStorage.getItem("textContent3question5class");
-
-    // получаем id, на который кладём элемент
-    let currentId = e.target.id;
-
-    // получаем объекты
-    let orignalElement = document.getElementById(idOrig);
-    let currentElement = document.getElementById(currentId);
-
-    // меняем блоки местами
-    currentElement.textContent = textContent;
-    currentElement.style.opacity = "1";
-    currentElement.style.color = "white";
-    currentElement.style.cursor = "grab";
-
-    orignalElement.textContent = "";
-    orignalElement.style.opacity = "0.3";
-    orignalElement.style.cursor = "default";
-
-    // меняем id местами
-    currentElement.id = idOrig;
-    orignalElement.id = currentId;
 }
 
 // 4 QUESTION
@@ -1212,6 +1178,10 @@ function question3() {
             document.getElementById(nameSelectedBtn3),
             selectBtn3 === "wrong"
         );
+
+        // расставляем мини-иконки
+
+        createMiniIcon(selectBtn3, document.getElementById(nameSelectedBtn3));
 
         // выносим общий статус к номеру вопроса
 
@@ -2179,7 +2149,7 @@ function question23() {
 document.getElementById("submit").onclick = function () {
     question1();
     question2();
-    // question3();
+    question3();
     question4();
     // question5();
     // question6();
