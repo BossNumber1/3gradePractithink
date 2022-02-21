@@ -687,60 +687,54 @@ function drop10(e) {
 // 11 QUESTION
 
 function drag11(e) {
-    localStorage.setItem("idOrigin11question2class", e.target.id);
-    localStorage.setItem(
-        "textContent11question2class",
-        e.target.textContent.trim()
-    );
+    localStorage.setItem("idOrigin11question3grade", e.target.id);
 }
 
 function drop11(e) {
-    // получаем текст и id взятого элемента
-    let idOrig = localStorage.getItem("idOrigin11question2class");
-    let textContent = localStorage.getItem("textContent11question2class");
+    // получаем имя и id взятого элемента
+    let idOrig = localStorage.getItem("idOrigin11question3grade");
+    let nameObjectOrig = idOrig.slice(0, -1);
 
-    // получаем id, на который кладём элемент
+    // получаем имя и id, на который кладём элемент
     let currentId = e.target.id;
+    let nameObjectCurrent = currentId.slice(0, -1);
 
     // получаем объекты
     let orignalElement = document.getElementById(idOrig);
     let currentElement = document.getElementById(currentId);
 
-    // меняем блоки местами
-    currentElement.textContent = textContent;
-    currentElement.style.backgroundColor = "#369cb7";
-    currentElement.style.border = "1px solid #369cb7";
-    currentElement.style.color = "white";
-    currentElement.style.cursor = "grab";
-
-    currentElement.style.display = "flex";
-    currentElement.style.alignItems = "center";
-    currentElement.style.justifyContent = "center";
-
-    orignalElement.style.backgroundColor = "white";
-    orignalElement.style.border = "1px solid black";
-    orignalElement.textContent = "";
-    orignalElement.style.cursor = "default";
+    // меняем картинки местами
+    currentElement.src = "./pictures/11que/" + nameObjectOrig + ".svg";
+    orignalElement.src = "./pictures/11que/" + nameObjectCurrent + ".svg";
 
     // меняем id местами
     currentElement.id = idOrig;
     orignalElement.id = currentId;
+
+    // меняем фон при определённом условии
+    if (nameObjectCurrent === "emptyPlace") {
+        currentElement.parentElement.style.backgroundColor = "white";
+    }
+
+    // меняем вид курсора
+    currentElement.style.cursor = "grab";
+    orignalElement.style.cursor = "default";
 }
 
 // 12 QUESTION
 
 function drag12(e) {
-    localStorage.setItem("idOrigin11question2class", e.target.id);
+    localStorage.setItem("idOrigin12question3grade", e.target.id);
     localStorage.setItem(
-        "textContent11question2class",
+        "textContent12question3grade",
         e.target.textContent.trim()
     );
 }
 
 function drop12(e) {
     // получаем текст и id взятого элемента
-    let idOrig = localStorage.getItem("idOrigin11question2class");
-    let textContent = localStorage.getItem("textContent11question2class");
+    let idOrig = localStorage.getItem("idOrigin12question3grade");
+    let textContent = localStorage.getItem("textContent12question3grade");
 
     // получаем id, на который кладём элемент
     let currentId = e.target.id;
