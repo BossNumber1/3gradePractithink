@@ -573,6 +573,60 @@ function allowDrop(e) {
     e.preventDefault();
 }
 
+// 5 QUESTION
+
+function drag5(e) {
+    localStorage.setItem("idOrigin5question3grade", e.target.id);
+}
+
+function drop5(e) {
+    // получаем id, позицию и класс текущего
+    let idOrig = localStorage.getItem("idOrigin5question3grade");
+    let idCurn = e.target.id;
+    let classCurn = e.target.parentElement.className;
+    let tempPositionOrig = idOrig.slice(-1);
+    let positionOrig =
+        tempPositionOrig > 2 ? tempPositionOrig - 3 : tempPositionOrig;
+
+    // получаем объекты
+    let orgnElement = document.getElementById(idOrig);
+    let crntElement = document.getElementById(idCurn);
+
+    // копируем переносимый объект в новый
+    let copyObj = document.createElement("img");
+    copyObj.src = "./pictures/5que/" + idOrig.slice(0, -1) + ".svg";
+    copyObj.id = idOrig;
+    copyObj.style.cursor = "grab";
+    copyObj.style.marginTop = "10px";
+    copyObj.style.marginLeft = "10px";
+
+    // очищаем оригинал
+    orgnElement.src = "";
+    orgnElement.id = "";
+    orgnElement.parentElement.style.cursor = "default";
+
+    if (orgnElement.parentElement.id === "") {
+        // вставляем переносимый объект в корзину
+        crntElement.appendChild(copyObj);
+    }
+
+    // теперь делаем перенос обратно
+    if (
+        orgnElement.parentElement.id === "firstBasket5" ||
+        orgnElement.parentElement.id === "secondBasket5" ||
+        orgnElement.parentElement.id === "thirdBasket5"
+    ) {
+        let crnt =
+            document.getElementsByClassName(classCurn)[0].children[positionOrig]
+                .children[0];
+        crnt.id = idOrig;
+        crnt.src = "./pictures/5que/" + idOrig.slice(0, -1) + ".svg";
+        crnt.style.cursor = "grab";
+
+        orgnElement.remove();
+    }
+}
+
 // 6 QUESTION
 
 function drag6(e) {
