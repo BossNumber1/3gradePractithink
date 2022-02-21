@@ -721,47 +721,41 @@ function drop11(e) {
     orignalElement.style.cursor = "default";
 }
 
-// 12 QUESTION
+// 14 QUESTION
 
-function drag12(e) {
-    localStorage.setItem("idOrigin12question3grade", e.target.id);
-    localStorage.setItem(
-        "textContent12question3grade",
-        e.target.textContent.trim()
-    );
+function drag14(e) {
+    localStorage.setItem("idOrigin14question3grade", e.target.id);
 }
 
-function drop12(e) {
-    // получаем текст и id взятого элемента
-    let idOrig = localStorage.getItem("idOrigin12question3grade");
-    let textContent = localStorage.getItem("textContent12question3grade");
+function drop14(e) {
+    // получаем имя и id взятого элемента
+    let idOrig = localStorage.getItem("idOrigin14question3grade");
+    let nameObjectOrig = idOrig.slice(0, -1);
 
-    // получаем id, на который кладём элемент
+    // получаем имя и id, на который кладём элемент
     let currentId = e.target.id;
+    let nameObjectCurrent = currentId.slice(0, -1);
 
     // получаем объекты
     let orignalElement = document.getElementById(idOrig);
     let currentElement = document.getElementById(currentId);
 
-    // меняем блоки местами
-    currentElement.textContent = textContent;
-    currentElement.style.backgroundColor = "#369cb7";
-    currentElement.style.border = "1px solid #369cb7";
-    currentElement.style.color = "white";
-    currentElement.style.cursor = "grab";
-
-    currentElement.style.display = "flex";
-    currentElement.style.alignItems = "center";
-    currentElement.style.justifyContent = "center";
-
-    orignalElement.style.backgroundColor = "white";
-    orignalElement.style.border = "1px solid black";
-    orignalElement.textContent = "";
-    orignalElement.style.cursor = "default";
+    // меняем картинки местами
+    currentElement.src = "./pictures/14que/" + nameObjectOrig + ".svg";
+    orignalElement.src = "./pictures/14que/" + nameObjectCurrent + ".svg";
 
     // меняем id местами
     currentElement.id = idOrig;
     orignalElement.id = currentId;
+
+    // меняем фон при определённом условии
+    if (nameObjectCurrent === "emptyPlace") {
+        currentElement.parentElement.style.backgroundColor = "white";
+    }
+
+    // меняем вид курсора
+    currentElement.style.cursor = "grab";
+    orignalElement.style.cursor = "default";
 }
 
 // 17 QUESTION
