@@ -576,12 +576,12 @@ function allowDrop(e) {
 // 6 QUESTION
 
 function drag6(e) {
-    localStorage.setItem("idOrigin6question6class", e.target.id);
+    localStorage.setItem("idOrigin6question3grade", e.target.id);
 }
 
 function drop6(e) {
     // получаем имя и id взятого элемента
-    let idOrig = localStorage.getItem("idOrigin6question6class");
+    let idOrig = localStorage.getItem("idOrigin6question3grade");
     let nameObjectOrig = idOrig.slice(0, -1);
 
     // получаем имя и id, на который кладём элемент
@@ -613,30 +613,38 @@ function drop6(e) {
 // 9 QUESTION
 
 function drag9(e) {
-    localStorage.setItem("idTakenCube9", e.target.id);
-    localStorage.setItem("nameCube9", e.target.dataset.name);
+    localStorage.setItem("idOrigin9question3grade", e.target.id);
 }
 
 function drop9(e) {
-    // получаем id и имя несомого элемента
-    let idTakenCube = localStorage.getItem("idTakenCube9");
-    let nameCube = localStorage.getItem("nameCube9");
+    // получаем имя и id взятого элемента
+    let idOrig = localStorage.getItem("idOrigin9question3grade");
+    let nameObjectOrig = idOrig.slice(0, -1);
 
-    // берем id того элемента, на который положим несомый
+    // получаем имя и id, на который кладём элемент
     let currentId = e.target.id;
-    let currentName = e.target.dataset.name;
+    let nameObjectCurrent = currentId.slice(0, -1);
+
+    // получаем объекты
+    let orignalElement = document.getElementById(idOrig);
+    let currentElement = document.getElementById(currentId);
 
     // меняем картинки местами
-    let orig = document.getElementById(idTakenCube);
-    orig.src = "./pictures/9que/" + currentName + ".svg";
-    orig.id = currentId;
-    orig.setAttribute("data-name", currentName);
-    orig.parentElement.style.cursor = "default";
+    currentElement.src = "./pictures/9que/" + nameObjectOrig + ".svg";
+    orignalElement.src = "./pictures/9que/" + nameObjectCurrent + ".svg";
 
-    e.target.src = "./pictures/9que/" + nameCube + ".svg";
-    e.target.id = idTakenCube;
-    e.target.setAttribute("data-name", nameCube);
-    e.target.parentElement.style.cursor = "grab";
+    // меняем id местами
+    currentElement.id = idOrig;
+    orignalElement.id = currentId;
+
+    // меняем фон при определённом условии
+    if (nameObjectCurrent === "emptyPlace") {
+        currentElement.parentElement.style.backgroundColor = "white";
+    }
+
+    // меняем вид курсора
+    currentElement.style.cursor = "grab";
+    orignalElement.style.cursor = "default";
 }
 
 // 11 QUESTION
