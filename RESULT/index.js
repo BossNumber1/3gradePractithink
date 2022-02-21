@@ -573,54 +573,41 @@ function allowDrop(e) {
     e.preventDefault();
 }
 
-// 4 QUESTION
+// 6 QUESTION
 
-function drag4(e) {
-    localStorage.setItem("idOrigin4question5class", e.target.id);
+function drag6(e) {
+    localStorage.setItem("idOrigin6question6class", e.target.id);
 }
 
-function drop4(e) {
-    // получаем id, позицию и класс текущего
-    let idOrig = localStorage.getItem("idOrigin4question5class");
-    let idCurn = e.target.id;
-    let classCurn = e.target.parentElement.className;
-    let positionOrig = idOrig.slice(0, -1).slice(-1) - 1;
+function drop6(e) {
+    // получаем имя и id взятого элемента
+    let idOrig = localStorage.getItem("idOrigin6question6class");
+    let nameObjectOrig = idOrig.slice(0, -1);
+
+    // получаем имя и id, на который кладём элемент
+    let currentId = e.target.id;
+    let nameObjectCurrent = currentId.slice(0, -1);
 
     // получаем объекты
-    let orgnElement = document.getElementById(idOrig);
-    let crntElement = document.getElementById(idCurn);
+    let orignalElement = document.getElementById(idOrig);
+    let currentElement = document.getElementById(currentId);
 
-    // копируем переносимый объект в новый
-    let copyObj = document.createElement("img");
-    copyObj.src = "./pictures/4que/" + idOrig.slice(0, -1) + ".svg";
-    copyObj.id = idOrig;
-    copyObj.style.cursor = "grab";
-    copyObj.style.marginTop = "10px";
-    copyObj.style.marginLeft = "10px";
+    // меняем картинки местами
+    currentElement.src = "./pictures/6que/" + nameObjectOrig + ".svg";
+    orignalElement.src = "./pictures/6que/" + nameObjectCurrent + ".svg";
 
-    // очищаем оригинал
-    orgnElement.src = "";
-    orgnElement.id = "";
-    orgnElement.parentElement.style.cursor = "default";
+    // меняем id местами
+    currentElement.id = idOrig;
+    orignalElement.id = currentId;
 
-    if (orgnElement.parentElement.id === "") {
-        // вставляем переносимый объект в корзину
-        crntElement.appendChild(copyObj);
+    // меняем фон при определённом условии
+    if (nameObjectCurrent === "emptyPlace") {
+        currentElement.parentElement.style.backgroundColor = "white";
     }
 
-    // теперь делаем перенос обратно
-    if (
-        orgnElement.parentElement.id === "firstBasket4" ||
-        orgnElement.parentElement.id === "secondBasket4" ||
-        orgnElement.parentElement.id === "thirdBasket4"
-    ) {
-        let crnt =
-            document.getElementsByClassName(classCurn)[0].children[positionOrig]
-                .children[0];
-        crnt.id = idOrig;
-        crnt.src = "./pictures/4que/" + idOrig.slice(0, -1) + ".svg";
-        crnt.style.cursor = "grab";
-    }
+    // меняем вид курсора
+    currentElement.style.cursor = "grab";
+    orignalElement.style.cursor = "default";
 }
 
 // 9 QUESTION
