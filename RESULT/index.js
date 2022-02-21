@@ -796,6 +796,43 @@ function drop17(e) {
     orignalElement.id = currentId;
 }
 
+// 18 QUESTION
+
+function drag18(e) {
+    localStorage.setItem("idOrigin18question3grade", e.target.id);
+}
+
+function drop18(e) {
+    // получаем имя и id взятого элемента
+    let idOrig = localStorage.getItem("idOrigin18question3grade");
+    let nameObjectOrig = idOrig.slice(0, -1);
+
+    // получаем имя и id, на который кладём элемент
+    let currentId = e.target.id;
+    let nameObjectCurrent = currentId.slice(0, -1);
+
+    // получаем объекты
+    let orignalElement = document.getElementById(idOrig);
+    let currentElement = document.getElementById(currentId);
+
+    // меняем картинки местами
+    currentElement.src = "./pictures/18que/" + nameObjectOrig + ".svg";
+    orignalElement.src = "./pictures/18que/" + nameObjectCurrent + ".svg";
+
+    // меняем id местами
+    currentElement.id = idOrig;
+    orignalElement.id = currentId;
+
+    // меняем фон при определённом условии
+    if (nameObjectCurrent === "emptyPlace") {
+        currentElement.parentElement.style.backgroundColor = "white";
+    }
+
+    // меняем вид курсора
+    currentElement.style.cursor = "grab";
+    orignalElement.style.cursor = "default";
+}
+
 // 23 QUESTION
 
 function drag23(e) {
