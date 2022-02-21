@@ -941,39 +941,55 @@ function drop18(e) {
 // 23 QUESTION
 
 function drag23(e) {
-    localStorage.setItem("idOrigin23question2class", e.target.id);
+    localStorage.setItem("idOrigin23question3grade", e.target.id);
 }
 
 function drop23(e) {
-    // получаем имя и id взятого элемента
-    let idOrig = localStorage.getItem("idOrigin23question2class");
-    let nameObjectOrig = idOrig.slice(0, -1);
-
-    // получаем имя и id, на который кладём элемент
-    let currentId = e.target.id;
-    let nameObjectCurrent = currentId.slice(0, -1);
+    // получаем id, позицию и класс текущего
+    let idOrig = localStorage.getItem("idOrigin23question3grade");
+    let idCurn = e.target.id;
+    let classCurn = e.target.parentElement.className;
+    let positionOrig = idOrig.slice(-1);
 
     // получаем объекты
-    let orignalElement = document.getElementById(idOrig);
-    let currentElement = document.getElementById(currentId);
+    let orgnElement = document.getElementById(idOrig);
+    let crntElement = document.getElementById(idCurn);
 
-    // меняем картинки местами
-    currentElement.src = "./pictures/23que/" + nameObjectOrig + ".svg";
-    orignalElement.src = "./pictures/23que/" + nameObjectCurrent + ".svg";
+    // копируем переносимый объект в новый
+    let copyObj = document.createElement("img");
+    copyObj.src = "./pictures/23que/" + idOrig.slice(0, -1) + ".svg";
+    copyObj.id = idOrig;
+    copyObj.style.cursor = "grab";
+    copyObj.style.marginTop = "10px";
+    copyObj.style.marginLeft = "10px";
 
-    // меняем id местами
-    currentElement.id = idOrig;
-    orignalElement.id = currentId;
+    // очищаем оригинал
+    orgnElement.src = "";
+    orgnElement.id = "";
+    orgnElement.parentElement.style.cursor = "default";
 
-    // меняем фон при определённом условии
-    if (nameObjectCurrent === "emptyPlace") {
-        currentElement.parentElement.style.backgroundColor = "white";
-        currentElement.parentElement.style.border = "none";
+    if (orgnElement.parentElement.id === "") {
+        // вставляем переносимый объект в корзину
+        crntElement.appendChild(copyObj);
+
+        orgnElement.src = "./pictures/23que/emptyPlace.svg";
     }
 
-    // меняем вид курсора
-    currentElement.style.cursor = "grab";
-    orignalElement.style.cursor = "default";
+    // теперь делаем перенос обратно
+    if (
+        orgnElement.parentElement.id === "firstBasket23" ||
+        orgnElement.parentElement.id === "secondBasket23"
+    ) {
+        let crnt =
+            document.getElementsByClassName(classCurn)[positionOrig]
+                .children[0];
+
+        crnt.id = idOrig;
+        crnt.src = "./pictures/23que/" + idOrig.slice(0, -1) + ".svg";
+        crnt.style.cursor = "grab";
+
+        orgnElement.remove();
+    }
 }
 
 // 20 QUESTION
