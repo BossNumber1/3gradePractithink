@@ -664,6 +664,57 @@ function drop6(e) {
     orignalElement.style.cursor = "default";
 }
 
+// 8 QUESTION
+
+function drag8(e) {
+    localStorage.setItem("idOrigin8question3grade", e.target.id);
+}
+
+function drop8(e) {
+    // получаем id, позицию и класс текущего
+    let idOrig = localStorage.getItem("idOrigin8question3grade");
+    let idCurn = e.target.id;
+    let classCurn = e.target.parentElement.className;
+    let positionOrig = idOrig.slice(-1);
+
+    // получаем объекты
+    let orgnElement = document.getElementById(idOrig);
+    let crntElement = document.getElementById(idCurn);
+
+    // копируем переносимый объект в новый
+    let copyObj = document.createElement("img");
+    copyObj.src = "./pictures/8que/" + idOrig.slice(0, -1) + ".svg";
+    copyObj.id = idOrig;
+    copyObj.style.cursor = "grab";
+    copyObj.style.marginTop = "10px";
+    copyObj.style.marginLeft = "10px";
+
+    // очищаем оригинал
+    orgnElement.src = "";
+    orgnElement.id = "";
+    orgnElement.parentElement.style.cursor = "default";
+
+    if (orgnElement.parentElement.id === "") {
+        // вставляем переносимый объект в корзину
+        crntElement.appendChild(copyObj);
+    }
+
+    // теперь делаем перенос обратно
+    if (
+        orgnElement.parentElement.id === "firstBasket8" ||
+        orgnElement.parentElement.id === "secondBasket8"
+    ) {
+        let crnt =
+            document.getElementsByClassName(classCurn)[0].children[positionOrig]
+                .children[0];
+        crnt.id = idOrig;
+        crnt.src = "./pictures/8que/" + idOrig.slice(0, -1) + ".svg";
+        crnt.style.cursor = "grab";
+
+        orgnElement.remove();
+    }
+}
+
 // 9 QUESTION
 
 function drag9(e) {
