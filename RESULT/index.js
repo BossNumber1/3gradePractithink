@@ -866,39 +866,38 @@ function drop14(e) {
 // 17 QUESTION
 
 function drag17(e) {
-    localStorage.setItem("idOrigin17question5class", e.target.id);
-    localStorage.setItem(
-        "textContent17question5class",
-        e.target.textContent.trim()
-    );
+    localStorage.setItem("idOrigin17question3grade", e.target.id);
 }
 
 function drop17(e) {
-    // получаем текст и id взятого элемента
-    let idOrig = localStorage.getItem("idOrigin17question5class");
-    let textContent = localStorage.getItem("textContent17question5class");
+    // получаем имя и id взятого элемента
+    let idOrig = localStorage.getItem("idOrigin17question3grade");
+    let nameObjectOrig = idOrig.slice(0, -1);
 
-    // получаем id, на который кладём элемент
+    // получаем имя и id, на который кладём элемент
     let currentId = e.target.id;
+    let nameObjectCurrent = currentId.slice(0, -1);
 
     // получаем объекты
     let orignalElement = document.getElementById(idOrig);
     let currentElement = document.getElementById(currentId);
 
-    // меняем блоки местами
-    currentElement.textContent = textContent;
-    currentElement.style.opacity = "1";
-    currentElement.style.color = "white";
-    currentElement.style.cursor = "grab";
-    currentElement.style.backgroundColor = "#369cb7";
-
-    orignalElement.textContent = "";
-    orignalElement.style.opacity = "0.3";
-    orignalElement.style.cursor = "default";
+    // меняем картинки местами
+    currentElement.src = "./pictures/17que/" + nameObjectOrig + ".svg";
+    orignalElement.src = "./pictures/17que/" + nameObjectCurrent + ".svg";
 
     // меняем id местами
     currentElement.id = idOrig;
     orignalElement.id = currentId;
+
+    // меняем фон при определённом условии
+    if (nameObjectCurrent === "emptyPlace") {
+        currentElement.parentElement.style.backgroundColor = "white";
+    }
+
+    // меняем вид курсора
+    currentElement.style.cursor = "grab";
+    orignalElement.style.cursor = "default";
 }
 
 // 18 QUESTION
