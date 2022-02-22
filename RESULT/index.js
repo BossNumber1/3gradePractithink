@@ -2162,40 +2162,27 @@ let numbers14 = {
 gettingDataFromFields(4, [1, 2, 4, 6], 14, numbers14);
 
 function question14() {
+    let emptyPlace = document.getElementsByClassName("emptyPlace14")[0];
+    let idEmptyPlace = emptyPlace.children[0].id;
+
     if (
-        numbers14.firstNumber != "" &&
-        numbers14.secondNumber != "" &&
-        numbers14.thirdNumber != "" &&
-        numbers14.fourthNumber != ""
+        numbers14.firstNumber !== "" &&
+        numbers14.secondNumber !== "" &&
+        numbers14.thirdNumber !== "" &&
+        numbers14.fourthNumber !== "" &&
+        idEmptyPlace !== "emptyPlace140"
     ) {
-        succerror(
-            document.getElementById("firstNumber14"),
-            numbers14.firstNumber === "wrong"
-        );
-
-        succerror(
-            document.getElementById("secondNumber14"),
-            numbers14.secondNumber === "wrong"
-        );
-
-        succerror(
-            document.getElementById("thirdNumber14"),
-            numbers14.thirdNumber === "wrong"
-        );
-
-        succerror(
-            document.getElementById("fourthNumber14"),
-            numbers14.fourthNumber === "wrong"
-        );
-
         // выносим общий статус к номеру вопроса
 
         if (
             numbers14.firstNumber === "right" &&
             numbers14.secondNumber === "right" &&
             numbers14.thirdNumber === "right" &&
-            numbers14.fourthNumber === "right"
+            numbers14.fourthNumber === "right" &&
+            idEmptyPlace === "firstBtn140"
         ) {
+            emptyPlace.style.backgroundColor = "#9DD765";
+
             addImage(
                 "success",
                 document.getElementsByClassName("question14"),
@@ -2203,6 +2190,34 @@ function question14() {
                 14
             );
         } else {
+            succerror(
+                document.getElementById("firstNumber14"),
+                numbers14.firstNumber === "wrong"
+            );
+
+            succerror(
+                document.getElementById("secondNumber14"),
+                numbers14.secondNumber === "wrong"
+            );
+
+            succerror(
+                document.getElementById("thirdNumber14"),
+                numbers14.thirdNumber === "wrong"
+            );
+
+            succerror(
+                document.getElementById("fourthNumber14"),
+                numbers14.fourthNumber === "wrong"
+            );
+
+            if (idEmptyPlace !== "firstBtn140") {
+                emptyPlace.children[0].style.border = "2px solid #ED7777";
+                emptyPlace.children[0].style.borderRadius = "5px";
+            } else {
+                emptyPlace.children[0].style.border = "2px solid #48B736";
+                emptyPlace.children[0].style.borderRadius = "5px";
+            }
+
             addImage(
                 "failure",
                 document.getElementsByClassName("question14"),
@@ -2214,6 +2229,9 @@ function question14() {
         }
     } else {
         highlightUnselectedBlocks(4, 14, numbers14);
+
+        emptyPlace.children[0].style.border = "2px solid #FFB47D";
+        emptyPlace.children[0].style.borderRadius = "5px";
     }
 }
 
