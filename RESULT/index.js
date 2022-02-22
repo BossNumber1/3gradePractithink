@@ -124,9 +124,12 @@ function addMiniIcon(elem, status) {
     }
 
     if (
-        elem.parentElement.parentElement.parentElement.className === "content9"
+        elem.parentElement.parentElement.parentElement.parentElement
+            .parentElement.className === "content9"
     ) {
-        objDiv.style.marginTop = "-25px";
+        objDiv.style.marginTop = "-20px";
+        objDiv.style.marginLeft =
+            elem.offsetLeft + widthAdjacentElement / 2 - 5 + "px";
     }
 
     if (elem.parentElement.parentElement.className === "content16") {
@@ -1631,29 +1634,55 @@ function question8() {
 
 // 9 QUESTION
 
-let numbers9 = {
-    firstNumber: "",
-    secondNumber: "",
-    thirdNumber: "",
-};
-
-// gettingDataFromFields(3, [42, 37, 5], 9, numbers9);
-
 function question9() {
+    // получаем содежимое блоков
+    let firstObject =
+        document.getElementsByClassName("topRow9")[0].children[0].children[0]
+            .children[1].children[0];
+    let secondObject =
+        document.getElementsByClassName("topRow9")[0].children[0].children[1]
+            .children[1].children[0];
+    let thirdObject =
+        document.getElementsByClassName("topRow9")[0].children[1].children[0]
+            .children[1].children[0];
+    let fourthObject =
+        document.getElementsByClassName("topRow9")[0].children[1].children[1]
+            .children[1].children[0];
+
+    let idObjectFirst = firstObject.id;
+    let idObjectSecond = secondObject.id;
+    let idObjectThird = thirdObject.id;
+    let idObjectFourth = fourthObject.id;
+
     if (
-        numbers9.firstNumber != "" &&
-        numbers9.secondNumber != "" &&
-        numbers9.thirdNumber != ""
+        idObjectFirst !== "emptyPlace90" &&
+        idObjectSecond !== "emptyPlace91" &&
+        idObjectThird !== "emptyPlace92" &&
+        idObjectFourth !== "emptyPlace93"
     ) {
-        succerrorAndCreateMiniIcon(3, 9, numbers9);
-
-        // выносим общий статус к номеру вопроса
-
+        // проверяем на верность для создания статуса
         if (
-            numbers9.firstNumber === "right" &&
-            numbers9.secondNumber === "right" &&
-            numbers9.thirdNumber === "right"
+            idObjectFirst === "firstBtn90" &&
+            idObjectSecond === "secondBtn90" &&
+            idObjectThird === "thirdBtn90" &&
+            idObjectFourth === "fourthBtn90"
         ) {
+            addMiniIcon(firstObject, "success");
+            firstObject.style.border = "2px solid #48B736";
+            firstObject.style.borderRadius = "5px";
+
+            addMiniIcon(secondObject, "success");
+            secondObject.style.border = "2px solid #48B736";
+            secondObject.style.borderRadius = "5px";
+
+            addMiniIcon(thirdObject, "success");
+            thirdObject.style.border = "2px solid #48B736";
+            thirdObject.style.borderRadius = "5px";
+
+            addMiniIcon(fourthObject, "success");
+            fourthObject.style.border = "2px solid #48B736";
+            fourthObject.style.borderRadius = "5px";
+
             addImage(
                 "success",
                 document.getElementsByClassName("question9"),
@@ -1661,6 +1690,46 @@ function question9() {
                 9
             );
         } else {
+            if (idObjectFirst !== "firstBtn90") {
+                addMiniIcon(firstObject, "failure");
+                firstObject.style.border = "2px solid #ED7777";
+                firstObject.style.borderRadius = "5px";
+            } else {
+                addMiniIcon(firstObject, "success");
+                firstObject.style.border = "2px solid #48B736";
+                firstObject.style.borderRadius = "5px";
+            }
+
+            if (idObjectSecond !== "secondBtn90") {
+                addMiniIcon(secondObject, "failure");
+                secondObject.style.border = "2px solid #ED7777";
+                secondObject.style.borderRadius = "5px";
+            } else {
+                addMiniIcon(secondObject, "success");
+                secondObject.style.border = "2px solid #48B736";
+                secondObject.style.borderRadius = "5px";
+            }
+
+            if (idObjectThird !== "thirdBtn90") {
+                addMiniIcon(thirdObject, "failure");
+                thirdObject.style.border = "2px solid #ED7777";
+                thirdObject.style.borderRadius = "5px";
+            } else {
+                addMiniIcon(thirdObject, "success");
+                thirdObject.style.border = "2px solid #48B736";
+                thirdObject.style.borderRadius = "5px";
+            }
+
+            if (idObjectFourth !== "fourthBtn90") {
+                addMiniIcon(fourthObject, "failure");
+                fourthObject.style.border = "2px solid #ED7777";
+                fourthObject.style.borderRadius = "5px";
+            } else {
+                addMiniIcon(fourthObject, "success");
+                fourthObject.style.border = "2px solid #48B736";
+                fourthObject.style.borderRadius = "5px";
+            }
+
             addImage(
                 "failure",
                 document.getElementsByClassName("question9"),
@@ -1668,10 +1737,28 @@ function question9() {
                 9
             );
 
-            //addCorrectAnswerQuestion9();
+            addCorrectAnswerQuestion9();
         }
     } else {
-        highlightUnselectedBlocks(3, 9, numbers9);
+        if (idObjectFirst === "emptyPlace90") {
+            firstObject.style.border = "2px solid #FFB47D";
+            firstObject.style.borderRadius = "5px";
+        }
+
+        if (idObjectSecond === "emptyPlace91") {
+            secondObject.style.border = "2px solid #FFB47D";
+            secondObject.style.borderRadius = "5px";
+        }
+
+        if (idObjectThird === "emptyPlace92") {
+            thirdObject.style.border = "2px solid #FFB47D";
+            thirdObject.style.borderRadius = "5px";
+        }
+
+        if (idObjectFourth === "emptyPlace93") {
+            fourthObject.style.border = "2px solid #FFB47D";
+            fourthObject.style.borderRadius = "5px";
+        }
     }
 }
 
@@ -2143,8 +2230,6 @@ function question18() {
     let idObjectThird = thirdObject.id;
     let idObjectFourth = fourthObject.id;
 
-    debugger;
-
     if (
         idObjectFirst !== "emptyPlace180" &&
         idObjectSecond !== "emptyPlace181" &&
@@ -2507,7 +2592,7 @@ document.getElementById("submit").onclick = function () {
     question6();
     question7();
     // question8();
-    // question9();
+    question9();
     question10();
     // question11();
     question12();
