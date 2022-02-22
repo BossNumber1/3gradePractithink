@@ -2491,27 +2491,67 @@ function question22() {
 // 23 QUESTION
 
 function question23() {
-    let necessaryPlace1 = document.getElementsByClassName("emptyPlace23")[0];
-    let necessaryPlace2 = document.getElementsByClassName("emptyPlace23")[1];
-    let necessaryPlace3 = document.getElementsByClassName("emptyPlace23")[2];
-    let necessaryPlace4 = document.getElementsByClassName("emptyPlace23")[3];
+    // получаем содержимое корзин
+    let contentBasketFirst = document.getElementById("firstBasket23").children;
+    let contentBasketSecond =
+        document.getElementById("secondBasket23").children;
 
-    let nameChild1 = necessaryPlace1.children[0].id.slice(0, -1);
-    let nameChild2 = necessaryPlace2.children[0].id.slice(0, -1);
-    let nameChild3 = necessaryPlace3.children[0].id.slice(0, -1);
-    let nameChild4 = necessaryPlace4.children[0].id.slice(0, -1);
+    // проверяем на пустоту
+    if (contentBasketFirst.length > 1 && contentBasketSecond.length > 1) {
+        let correctOrderBasketFirst = [
+                "headerBasket23first",
+                "square232",
+                "parallelogram234",
+                "rectangle235",
+                "rhombus236",
+            ],
+            correctOrderBasketSecond = [
+                "headerBasket23second",
+                "triangle230",
+                "star231",
+                "pentagon233",
+                "quadrilateral237",
+            ],
+            theBasketFirstIsFilledCorrectly = "yes",
+            theBasketSecondIsFilledCorrectly = "yes";
 
-    if (
-        nameChild1 !== "emptyPlace" &&
-        nameChild2 !== "emptyPlace" &&
-        nameChild3 !== "emptyPlace" &&
-        nameChild4 !== "emptyPlace"
-    ) {
+        // раскрашиваем блоки
+        for (let i = 1; i < contentBasketFirst.length; i++) {
+            let id = contentBasketFirst[i].id;
+
+            if (correctOrderBasketFirst.includes(id) === false) {
+                document.getElementById(id).style.border = "2px solid #ED7777";
+            } else {
+                document.getElementById(id).style.border = "2px solid #48B736";
+            }
+
+            document.getElementById(id).style.borderRadius = "5px";
+
+            if (correctOrderBasketFirst.includes(id) === false) {
+                theBasketFirstIsFilledCorrectly = "no";
+            }
+        }
+
+        for (let i = 1; i < contentBasketSecond.length; i++) {
+            let id = contentBasketSecond[i].id;
+
+            if (correctOrderBasketSecond.includes(id) === false) {
+                document.getElementById(id).style.border = "2px solid #ED7777";
+            } else {
+                document.getElementById(id).style.border = "2px solid #48B736";
+            }
+
+            document.getElementById(id).style.borderRadius = "5px";
+
+            if (correctOrderBasketSecond.includes(id) === false) {
+                theBasketSecondIsFilledCorrectly = "no";
+            }
+        }
+
+        // проверяем на верность для создания статуса
         if (
-            nameChild1 === "triangle" &&
-            nameChild2 === "trapezium" &&
-            nameChild3 === "pentagon" &&
-            nameChild4 === "hexagon"
+            theBasketFirstIsFilledCorrectly === "yes" &&
+            theBasketSecondIsFilledCorrectly === "yes"
         ) {
             addImage(
                 "success",
@@ -2520,22 +2560,6 @@ function question23() {
                 23
             );
         } else {
-            if (nameChild1 !== "triangle") {
-                necessaryPlace1.style.border = "2px solid #ED7777";
-            }
-
-            if (nameChild2 !== "trapezium") {
-                necessaryPlace2.style.border = "2px solid #ED7777";
-            }
-
-            if (nameChild3 !== "pentagon") {
-                necessaryPlace3.style.border = "2px solid #ED7777";
-            }
-
-            if (nameChild4 !== "hexagon") {
-                necessaryPlace4.style.border = "2px solid #ED7777";
-            }
-
             addImage(
                 "failure",
                 document.getElementsByClassName("question23"),
@@ -2543,23 +2567,19 @@ function question23() {
                 23
             );
 
-            //addCorrectAnswerQuestion23();
+            addCorrectAnswerQuestion23();
         }
     } else {
-        if (nameChild1 === "emptyPlace") {
-            necessaryPlace1.style.border = "2px solid #FFB47D";
+        if (contentBasketFirst.length === 1) {
+            document.getElementsByClassName("basket23first")[0].style.border =
+                "2px solid #FFB47D";
+            document.getElementById("headerBasket23first").style.left = "-1px";
         }
 
-        if (nameChild2 === "emptyPlace") {
-            necessaryPlace2.style.border = "2px solid #FFB47D";
-        }
-
-        if (nameChild3 === "emptyPlace") {
-            necessaryPlace3.style.border = "2px solid #FFB47D";
-        }
-
-        if (nameChild4 === "emptyPlace") {
-            necessaryPlace4.style.border = "2px solid #FFB47D";
+        if (contentBasketSecond.length === 1) {
+            document.getElementsByClassName("basket23second")[0].style.border =
+                "2px solid #FFB47D";
+            document.getElementById("headerBasket23second").style.left = "-1px";
         }
     }
 }
@@ -2589,5 +2609,5 @@ document.getElementById("submit").onclick = function () {
     question20();
     question21();
     question22();
-    // question23();
+    question23();
 };
