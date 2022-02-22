@@ -1493,6 +1493,43 @@ function question5() {
 
 // 6 QUESTION
 
+function question6() {
+    // получаем содежимое блоков
+    let object =
+        document.getElementsByClassName("topRow6")[0].children[0].children[0];
+    let idObject = object.id;
+
+    if (idObject !== "emptyPlace60") {
+        // проверяем на верность для создания статуса
+        if (idObject === "secondBtn60") {
+            object.style.border = "2px solid #48B736";
+            object.style.borderRadius = "5px";
+
+            addImage(
+                "success",
+                document.getElementsByClassName("question6"),
+                "app6",
+                6
+            );
+        } else {
+            object.style.border = "2px solid #ED7777";
+            object.style.borderRadius = "5px";
+
+            addImage(
+                "failure",
+                document.getElementsByClassName("question6"),
+                "app6",
+                6
+            );
+
+            addCorrectAnswerQuestion6();
+        }
+    } else {
+        object.style.border = "2px solid #ED7777";
+        object.style.borderRadius = "5px";
+    }
+}
+
 // 7 QUESTION
 
 let numbers7 = {
@@ -2329,7 +2366,7 @@ document.getElementById("submit").onclick = function () {
     question3();
     question4();
     // question5();
-    // question6();
+    question6();
     question7();
     // question8();
     // question9();
