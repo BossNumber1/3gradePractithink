@@ -67,8 +67,10 @@ function addMiniIcon(elem, status) {
         objDiv.style.marginTop = "-25px";
         objDiv.style.marginLeft =
             elem.offsetLeft + widthAdjacentElement / 2 - 7 + "px";
-    } else if (elem.parentElement.parentElement.className === "content6") {
-        objDiv.style.marginTop = "-50px";
+    } else if (
+        elem.parentElement.parentElement.parentElement.className === "content6"
+    ) {
+        objDiv.style.marginTop = "-25px";
         objDiv.style.marginLeft =
             elem.offsetLeft + widthAdjacentElement / 2 - 7 + "px";
     } else {
@@ -1502,6 +1504,7 @@ function question6() {
     if (idObject !== "emptyPlace60") {
         // проверяем на верность для создания статуса
         if (idObject === "secondBtn60") {
+            addMiniIcon(object, "success");
             object.style.border = "2px solid #48B736";
             object.style.borderRadius = "5px";
 
@@ -1512,6 +1515,7 @@ function question6() {
                 6
             );
         } else {
+            addMiniIcon(object, "failure");
             object.style.border = "2px solid #ED7777";
             object.style.borderRadius = "5px";
 
