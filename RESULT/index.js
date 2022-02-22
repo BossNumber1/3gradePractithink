@@ -108,9 +108,9 @@ function addMiniIcon(elem, status) {
     } else if (
         elem.parentElement.parentElement.parentElement.className === "content11"
     ) {
-        objDiv.style.marginTop = "-25px";
+        objDiv.style.marginTop = "-20px";
         objDiv.style.marginLeft =
-            elem.offsetLeft + widthAdjacentElement / 2 - 23 + "px";
+            elem.offsetLeft + widthAdjacentElement / 2 - 5 + "px";
     }
 
     if (elem.parentElement.parentElement.className === "fourthRow12") {
@@ -1842,47 +1842,55 @@ function question10() {
 
 // 11 QUESTION
 
-let numbers11 = {
-    firstNumber: "",
-};
-
-// gettingDataFromFields(1, [5], 11, numbers11);
-
 function question11() {
     // получаем содежимое блоков
-    let firstPlace11 =
-        document.getElementsByClassName("firstRow11")[0].children[0].id;
-    let secondPlace11 =
-        document.getElementsByClassName("firstRow11")[0].children[1].id;
-    let thirdPlace11 =
-        document.getElementsByClassName("firstRow11")[0].children[2].id;
-    let fourthPlace11 =
-        document.getElementsByClassName("firstRow11")[0].children[3].id;
-    let fifthPlace11 =
-        document.getElementsByClassName("firstRow11")[0].children[4].id;
-    let sixthPlace11 =
-        document.getElementsByClassName("firstRow11")[0].children[5].id;
+    let firstObject =
+        document.getElementsByClassName("centerRow11")[0].children[0]
+            .children[0];
+    let secondObject =
+        document.getElementsByClassName("centerRow11")[0].children[1]
+            .children[0];
+    let thirdObject =
+        document.getElementsByClassName("centerRow11")[0].children[2]
+            .children[0];
+    let fourthObject =
+        document.getElementsByClassName("centerRow11")[0].children[3]
+            .children[0];
+
+    let idObjectFirst = firstObject.id;
+    let idObjectSecond = secondObject.id;
+    let idObjectThird = thirdObject.id;
+    let idObjectFourth = fourthObject.id;
 
     if (
-        numbers11.firstNumber !== "" &&
-        firstPlace11 !== "firstEmpty11" &&
-        secondPlace11 !== "secondEmpty11" &&
-        thirdPlace11 !== "thirdEmpty11" &&
-        fourthPlace11 !== "fourthEmpty11" &&
-        fifthPlace11 !== "fifthEmpty11" &&
-        sixthPlace11 !== "sixthEmpty11"
+        idObjectFirst !== "emptyPlace110" &&
+        idObjectSecond !== "emptyPlace111" &&
+        idObjectThird !== "emptyPlace112" &&
+        idObjectFourth !== "emptyPlace113"
     ) {
-        succerrorAndCreateMiniIcon(1, 11, numbers11);
         // проверяем на верность для создания статуса
         if (
-            numbers11.firstNumber === "right" &&
-            firstPlace11 === "sixthBtn11" &&
-            secondPlace11 === "secondBtn11" &&
-            thirdPlace11 === "thirdBtn11" &&
-            fourthPlace11 === "fourthBtn11" &&
-            fifthPlace11 === "fifthBtn11" &&
-            sixthPlace11 === "firstBtn11"
+            idObjectFirst === "secondBtn110" &&
+            idObjectSecond === "fourthBtn110" &&
+            idObjectThird === "firstBtn110" &&
+            idObjectFourth === "thirdBtn110"
         ) {
+            addMiniIcon(firstObject, "success");
+            firstObject.style.border = "2px solid #48B736";
+            firstObject.style.borderRadius = "10px";
+
+            addMiniIcon(secondObject, "success");
+            secondObject.style.border = "2px solid #48B736";
+            secondObject.style.borderRadius = "10px";
+
+            addMiniIcon(thirdObject, "success");
+            thirdObject.style.border = "2px solid #48B736";
+            thirdObject.style.borderRadius = "10px";
+
+            addMiniIcon(fourthObject, "success");
+            fourthObject.style.border = "2px solid #48B736";
+            fourthObject.style.borderRadius = "10px";
+
             addImage(
                 "success",
                 document.getElementsByClassName("question11"),
@@ -1890,76 +1898,44 @@ function question11() {
                 11
             );
         } else {
-            if (firstPlace11 !== "sixthBtn11") {
-                document.getElementById(firstPlace11).style.border =
-                    "2px solid #ED7777";
-
-                addMiniIcon(document.getElementById(firstPlace11), "failure");
-            } else if (firstPlace11 === "sixthBtn11") {
-                document.getElementById(firstPlace11).style.border =
-                    "2px solid #9DD765";
-
-                addMiniIcon(document.getElementById(firstPlace11), "success");
+            if (idObjectFirst !== "secondBtn110") {
+                addMiniIcon(firstObject, "failure");
+                firstObject.style.border = "2px solid #ED7777";
+                firstObject.style.borderRadius = "10px";
+            } else {
+                addMiniIcon(firstObject, "success");
+                firstObject.style.border = "2px solid #48B736";
+                firstObject.style.borderRadius = "10px";
             }
 
-            if (secondPlace11 !== "secondBtn11") {
-                document.getElementById(secondPlace11).style.border =
-                    "2px solid #ED7777";
-
-                addMiniIcon(document.getElementById(secondPlace11), "failure");
-            } else if (secondPlace11 === "secondBtn11") {
-                document.getElementById(secondPlace11).style.border =
-                    "2px solid #9DD765";
-
-                addMiniIcon(document.getElementById(secondPlace11), "success");
+            if (idObjectSecond !== "fourthBtn110") {
+                addMiniIcon(secondObject, "failure");
+                secondObject.style.border = "2px solid #ED7777";
+                secondObject.style.borderRadius = "10px";
+            } else {
+                addMiniIcon(secondObject, "success");
+                secondObject.style.border = "2px solid #48B736";
+                secondObject.style.borderRadius = "10px";
             }
 
-            if (thirdPlace11 !== "thirdBtn11") {
-                document.getElementById(thirdPlace11).style.border =
-                    "2px solid #ED7777";
-
-                addMiniIcon(document.getElementById(thirdPlace11), "failure");
-            } else if (thirdPlace11 === "thirdBtn11") {
-                document.getElementById(thirdPlace11).style.border =
-                    "2px solid #9DD765";
-
-                addMiniIcon(document.getElementById(thirdPlace11), "success");
+            if (idObjectThird !== "firstBtn110") {
+                addMiniIcon(thirdObject, "failure");
+                thirdObject.style.border = "2px solid #ED7777";
+                thirdObject.style.borderRadius = "10px";
+            } else {
+                addMiniIcon(thirdObject, "success");
+                thirdObject.style.border = "2px solid #48B736";
+                thirdObject.style.borderRadius = "10px";
             }
 
-            if (fourthPlace11 !== "fourthBtn11") {
-                document.getElementById(fourthPlace11).style.border =
-                    "2px solid #ED7777";
-
-                addMiniIcon(document.getElementById(fourthPlace11), "failure");
-            } else if (fourthPlace11 === "fourthBtn11") {
-                document.getElementById(fourthPlace11).style.border =
-                    "2px solid #9DD765";
-
-                addMiniIcon(document.getElementById(fourthPlace11), "success");
-            }
-
-            if (fifthPlace11 !== "fifthBtn11") {
-                document.getElementById(fifthPlace11).style.border =
-                    "2px solid #ED7777";
-
-                addMiniIcon(document.getElementById(fifthPlace11), "failure");
-            } else if (fifthPlace11 === "fifthBtn11") {
-                document.getElementById(fifthPlace11).style.border =
-                    "2px solid #9DD765";
-
-                addMiniIcon(document.getElementById(fifthPlace11), "success");
-            }
-
-            if (sixthPlace11 !== "firstBtn11") {
-                document.getElementById(sixthPlace11).style.border =
-                    "2px solid #ED7777";
-
-                addMiniIcon(document.getElementById(sixthPlace11), "failure");
-            } else if (sixthPlace11 === "firstBtn11") {
-                document.getElementById(sixthPlace11).style.border =
-                    "2px solid #9DD765";
-
-                addMiniIcon(document.getElementById(sixthPlace11), "success");
+            if (idObjectFourth !== "thirdBtn110") {
+                addMiniIcon(fourthObject, "failure");
+                fourthObject.style.border = "2px solid #ED7777";
+                fourthObject.style.borderRadius = "10px";
+            } else {
+                addMiniIcon(fourthObject, "success");
+                fourthObject.style.border = "2px solid #48B736";
+                fourthObject.style.borderRadius = "10px";
             }
 
             addImage(
@@ -1969,21 +1945,28 @@ function question11() {
                 11
             );
 
-            //addCorrectAnswerQuestion11();
+            addCorrectAnswerQuestion11();
         }
     } else {
-        if (
-            firstPlace11 === "firstEmpty11" &&
-            secondPlace11 === "secondEmpty11" &&
-            thirdPlace11 === "thirdEmpty11" &&
-            fourthPlace11 === "fourthEmpty11" &&
-            fifthPlace11 === "fifthEmpty11" &&
-            sixthPlace11 === "sixthEmpty11"
-        ) {
-            highlightingUnfillededBlocks(6, 11);
+        if (idObjectFirst === "emptyPlace110") {
+            firstObject.style.border = "2px solid #FFB47D";
+            firstObject.style.borderRadius = "10px";
         }
 
-        highlightUnselectedBlocks(1, 11, numbers11);
+        if (idObjectSecond === "emptyPlace111") {
+            secondObject.style.border = "2px solid #FFB47D";
+            secondObject.style.borderRadius = "10px";
+        }
+
+        if (idObjectThird === "emptyPlace112") {
+            thirdObject.style.border = "2px solid #FFB47D";
+            thirdObject.style.borderRadius = "10px";
+        }
+
+        if (idObjectFourth === "emptyPlace113") {
+            fourthObject.style.border = "2px solid #FFB47D";
+            fourthObject.style.borderRadius = "10px";
+        }
     }
 }
 
@@ -2594,7 +2577,7 @@ document.getElementById("submit").onclick = function () {
     // question8();
     question9();
     question10();
-    // question11();
+    question11();
     question12();
     question13();
     question14();
