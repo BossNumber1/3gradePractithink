@@ -87,7 +87,9 @@ function addMiniIcon(elem, status) {
             elem.offsetLeft + widthAdjacentElement / 2 - 7 + "px";
     }
 
-    if (elem.parentElement.parentElement.className === "content10") {
+    if (
+        elem.parentElement.parentElement.parentElement.className === "content10"
+    ) {
         objDiv.style.marginTop = "-25px";
     }
 
@@ -1529,7 +1531,7 @@ function question6() {
             addCorrectAnswerQuestion6();
         }
     } else {
-        object.style.border = "2px solid #ED7777";
+        object.style.border = "2px solid #FFB47D";
         object.style.borderRadius = "5px";
     }
 }
@@ -1675,19 +1677,33 @@ function question9() {
 
 // 10 QUESTION
 
-let numbers10 = {
-    firstNumber: "",
-};
-
-// gettingDataFromFields(1, ["14 + 4 = 18"], 10, numbers10);
-
 function question10() {
-    if (numbers10.firstNumber != "") {
-        succerrorAndCreateMiniIcon(1, 10, numbers10);
+    // получаем содежимое блоков
+    let firstObject =
+        document.getElementsByClassName("topRow10")[0].children[0].children[0];
+    let secondObject =
+        document.getElementsByClassName("topRow10")[0].children[1].children[0];
 
-        // выносим общий статус к номеру вопроса
+    let idObjectFirst = firstObject.id;
+    let idObjectSecond = secondObject.id;
 
-        if (numbers10.firstNumber === "right") {
+    if (
+        idObjectFirst !== "emptyPlace100" &&
+        idObjectSecond !== "emptyPlace101"
+    ) {
+        // проверяем на верность для создания статуса
+        if (
+            idObjectFirst === "thirdBtn100" &&
+            idObjectSecond === "firstBtn100"
+        ) {
+            addMiniIcon(firstObject, "success");
+            firstObject.style.border = "2px solid #48B736";
+            firstObject.style.borderRadius = "5px";
+
+            addMiniIcon(secondObject, "success");
+            secondObject.style.border = "2px solid #48B736";
+            secondObject.style.borderRadius = "5px";
+
             addImage(
                 "success",
                 document.getElementsByClassName("question10"),
@@ -1695,6 +1711,26 @@ function question10() {
                 10
             );
         } else {
+            if (idObjectFirst !== "thirdBtn100") {
+                addMiniIcon(firstObject, "failure");
+                firstObject.style.border = "2px solid #ED7777";
+                firstObject.style.borderRadius = "5px";
+            } else {
+                addMiniIcon(firstObject, "success");
+                firstObject.style.border = "2px solid #48B736";
+                firstObject.style.borderRadius = "5px";
+            }
+
+            if (idObjectSecond !== "firstBtn100") {
+                addMiniIcon(secondObject, "failure");
+                secondObject.style.border = "2px solid #ED7777";
+                secondObject.style.borderRadius = "5px";
+            } else {
+                addMiniIcon(secondObject, "success");
+                secondObject.style.border = "2px solid #48B736";
+                secondObject.style.borderRadius = "5px";
+            }
+
             addImage(
                 "failure",
                 document.getElementsByClassName("question10"),
@@ -1702,10 +1738,18 @@ function question10() {
                 10
             );
 
-            //addCorrectAnswerQuestion10();
+            addCorrectAnswerQuestion10();
         }
     } else {
-        highlightUnselectedBlocks(1, 10, numbers10);
+        if (idObjectFirst === "emptyPlace100") {
+            firstObject.style.border = "2px solid #FFB47D";
+            firstObject.style.borderRadius = "5px";
+        }
+
+        if (idObjectSecond === "emptyPlace101") {
+            secondObject.style.border = "2px solid #FFB47D";
+            secondObject.style.borderRadius = "5px";
+        }
     }
 }
 
@@ -2374,7 +2418,7 @@ document.getElementById("submit").onclick = function () {
     question7();
     // question8();
     // question9();
-    // question10();
+    question10();
     // question11();
     question12();
     question13();
