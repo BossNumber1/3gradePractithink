@@ -1445,37 +1445,86 @@ function question4() {
 
 // 5 QUESTION
 
-let numbers5 = {
-    firstNumber: "",
-    secondNumber: "",
-    thirdNumber: "",
-    fourthNumber: "",
-    fifthNumber: "",
-    sixthNumber: "",
-};
-
-// gettingDataFromFields(6, [3, 3, 3, 3, 3, 15], 5, numbers5);
-
 function question5() {
+    // получаем содержимое корзин
+    let contentBasketFirst = document.getElementById("firstBasket5").children;
+    let contentBasketSecond = document.getElementById("secondBasket5").children;
+    let contentBasketThird = document.getElementById("thirdBasket5").children;
+
+    // проверяем на пустоту
     if (
-        numbers5.firstNumber !== "" &&
-        numbers5.secondNumber !== "" &&
-        numbers5.thirdNumber !== "" &&
-        numbers5.fourthNumber !== "" &&
-        numbers5.fifthNumber !== "" &&
-        numbers5.sixthNumber !== ""
+        contentBasketFirst.length > 1 &&
+        contentBasketSecond.length > 1 &&
+        contentBasketThird.length > 1
     ) {
-        succerrorAndCreateMiniIcon(6, 5, numbers5);
+        let correctOrderBasketFirst = [
+                "headerBasket5first",
+                "firstBtn50",
+                "secondBtn51",
+                "fourthBtn53",
+            ],
+            correctOrderBasketSecond = [
+                "headerBasket5second",
+                "thirdBtn52",
+                "fifthBtn54",
+            ],
+            correctOrderBasketThird = [
+                "headerBasket5third",
+                "seventhBtn56",
+                "sixthBtn55",
+            ],
+            theBasketFirstIsFilledCorrectly = "yes",
+            theBasketSecondIsFilledCorrectly = "yes",
+            theBasketThirdIsFilledCorrectly = "yes";
 
-        // выносим общий статус к номеру вопроса
+        // раскрашиваем блоки
+        for (let i = 1; i < contentBasketFirst.length; i++) {
+            let id = contentBasketFirst[i].id;
 
+            if (correctOrderBasketFirst.includes(id) === false) {
+                document.getElementById(id).style.border = "2px solid #ED7777";
+            }
+
+            document.getElementById(id).style.borderRadius = "5px";
+
+            if (correctOrderBasketFirst.includes(id) === false) {
+                theBasketFirstIsFilledCorrectly = "no";
+            }
+        }
+
+        for (let i = 1; i < contentBasketSecond.length; i++) {
+            let id = contentBasketSecond[i].id;
+
+            if (correctOrderBasketSecond.includes(id) === false) {
+                document.getElementById(id).style.border = "2px solid #ED7777";
+            }
+
+            document.getElementById(id).style.borderRadius = "5px";
+
+            if (correctOrderBasketSecond.includes(id) === false) {
+                theBasketSecondIsFilledCorrectly = "no";
+            }
+        }
+
+        for (let i = 1; i < contentBasketThird.length; i++) {
+            let id = contentBasketThird[i].id;
+
+            if (correctOrderBasketThird.includes(id) === false) {
+                document.getElementById(id).style.border = "2px solid #ED7777";
+            }
+
+            document.getElementById(id).style.borderRadius = "5px";
+
+            if (correctOrderBasketThird.includes(id) === false) {
+                theBasketThirdIsFilledCorrectly = "no";
+            }
+        }
+
+        // проверяем на верность для создания статуса
         if (
-            numbers5.firstNumber === "right" &&
-            numbers5.secondNumber === "right" &&
-            numbers5.thirdNumber === "right" &&
-            numbers5.fourthNumber === "right" &&
-            numbers5.fifthNumber === "right" &&
-            numbers5.sixthNumber === "right"
+            theBasketFirstIsFilledCorrectly === "yes" &&
+            theBasketSecondIsFilledCorrectly === "yes" &&
+            theBasketThirdIsFilledCorrectly === "yes"
         ) {
             addImage(
                 "success",
@@ -1491,10 +1540,26 @@ function question5() {
                 5
             );
 
-            //addCorrectAnswerQuestion5();
+            addCorrectAnswerQuestion5();
         }
     } else {
-        highlightUnselectedBlocks(6, 5, numbers5);
+        if (contentBasketFirst.length === 1) {
+            document.getElementsByClassName("basket5first")[0].style.border =
+                "2px solid #FFB47D";
+            document.getElementById("headerBasket5first").style.left = "-1px";
+        }
+
+        if (contentBasketSecond.length === 1) {
+            document.getElementsByClassName("basket5second")[0].style.border =
+                "2px solid #FFB47D";
+            document.getElementById("headerBasket5second").style.left = "-1px";
+        }
+
+        if (contentBasketThird.length === 1) {
+            document.getElementsByClassName("basket5third")[0].style.border =
+                "2px solid #FFB47D";
+            document.getElementById("headerBasket5third").style.left = "-1px";
+        }
     }
 }
 
@@ -2618,7 +2683,7 @@ document.getElementById("submit").onclick = function () {
     question2();
     question3();
     question4();
-    // question5();
+    question5();
     question6();
     question7();
     question8();
