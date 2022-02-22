@@ -2248,12 +2248,14 @@ let numbers15 = {
 gettingDataFromFields(1, ["01 : 10"], 15, numbers15);
 
 function question15() {
-    if (numbers15.firstNumber != "") {
+    let secondValue = document.getElementById("secondNumber15").value;
+
+    if (numbers15.firstNumber !== "") {
         succerrorAndCreateMiniIcon(1, 15, numbers15);
 
         // выносим общий статус к номеру вопроса
 
-        if (numbers15.firstNumber === "right") {
+        if (numbers15.firstNumber === "right" && secondValue === "am") {
             addImage(
                 "success",
                 document.getElementsByClassName("question15"),
@@ -2261,6 +2263,22 @@ function question15() {
                 15
             );
         } else {
+            if (secondValue === "pm") {
+                addMiniIcon(
+                    document.getElementById("secondNumber15"),
+                    "failure"
+                );
+                document.getElementById("secondNumber15").style.border =
+                    "2px solid #ED7777";
+            } else {
+                addMiniIcon(
+                    document.getElementById("secondNumber15"),
+                    "success"
+                );
+                document.getElementById("secondNumber15").style.border =
+                    "2px solid #48B736";
+            }
+
             addImage(
                 "failure",
                 document.getElementsByClassName("question15"),
@@ -2272,6 +2290,9 @@ function question15() {
         }
     } else {
         highlightUnselectedBlocks(1, 15, numbers15);
+
+        document.getElementById("secondNumber15").style.border =
+            "2px solid #FFB47D";
     }
 }
 
