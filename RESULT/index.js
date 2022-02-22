@@ -2128,15 +2128,52 @@ function question16() {
 // 18 QUESTION
 
 function question18() {
-    if (selectBtn18 !== "") {
-        succerror(
-            document.getElementById(nameSelectedBtn18),
-            selectBtn18 === "wrong"
-        );
+    // получаем содежимое блоков
+    let firstObject =
+        document.getElementsByClassName("topRow18")[0].children[0].children[0];
+    let secondObject =
+        document.getElementsByClassName("topRow18")[0].children[1].children[0];
+    let thirdObject =
+        document.getElementsByClassName("topRow18")[0].children[2].children[0];
+    let fourthObject =
+        document.getElementsByClassName("topRow18")[0].children[3].children[0];
 
-        // выносим общий статус к номеру вопроса
+    let idObjectFirst = firstObject.id;
+    let idObjectSecond = secondObject.id;
+    let idObjectThird = thirdObject.id;
+    let idObjectFourth = fourthObject.id;
 
-        if (selectBtn18 === "right") {
+    debugger;
+
+    if (
+        idObjectFirst !== "emptyPlace180" &&
+        idObjectSecond !== "emptyPlace181" &&
+        idObjectThird !== "emptyPlace182" &&
+        idObjectFourth !== "emptyPlace183"
+    ) {
+        // проверяем на верность для создания статуса
+        if (
+            idObjectFirst === "firstBtn100" &&
+            idObjectSecond === "thirdBtn100" &&
+            idObjectThird === "fourthBtn100" &&
+            idObjectFourth === "secondBtn100"
+        ) {
+            addMiniIcon(firstObject, "success");
+            firstObject.style.border = "2px solid #48B736";
+            firstObject.style.borderRadius = "5px";
+
+            addMiniIcon(secondObject, "success");
+            secondObject.style.border = "2px solid #48B736";
+            secondObject.style.borderRadius = "5px";
+
+            addMiniIcon(thirdObject, "success");
+            thirdObject.style.border = "2px solid #48B736";
+            thirdObject.style.borderRadius = "5px";
+
+            addMiniIcon(fourthObject, "success");
+            fourthObject.style.border = "2px solid #48B736";
+            fourthObject.style.borderRadius = "5px";
+
             addImage(
                 "success",
                 document.getElementsByClassName("question18"),
@@ -2144,6 +2181,46 @@ function question18() {
                 18
             );
         } else {
+            if (idObjectFirst !== "firstBtn180") {
+                addMiniIcon(firstObject, "failure");
+                firstObject.style.border = "2px solid #ED7777";
+                firstObject.style.borderRadius = "5px";
+            } else {
+                addMiniIcon(firstObject, "success");
+                firstObject.style.border = "2px solid #48B736";
+                firstObject.style.borderRadius = "5px";
+            }
+
+            if (idObjectSecond !== "thirdBtn180") {
+                addMiniIcon(secondObject, "failure");
+                secondObject.style.border = "2px solid #ED7777";
+                secondObject.style.borderRadius = "5px";
+            } else {
+                addMiniIcon(secondObject, "success");
+                secondObject.style.border = "2px solid #48B736";
+                secondObject.style.borderRadius = "5px";
+            }
+
+            if (idObjectThird !== "fourthBtn180") {
+                addMiniIcon(thirdObject, "failure");
+                thirdObject.style.border = "2px solid #ED7777";
+                thirdObject.style.borderRadius = "5px";
+            } else {
+                addMiniIcon(thirdObject, "success");
+                thirdObject.style.border = "2px solid #48B736";
+                thirdObject.style.borderRadius = "5px";
+            }
+
+            if (idObjectFourth !== "secondBtn180") {
+                addMiniIcon(fourthObject, "failure");
+                fourthObject.style.border = "2px solid #ED7777";
+                fourthObject.style.borderRadius = "5px";
+            } else {
+                addMiniIcon(fourthObject, "success");
+                fourthObject.style.border = "2px solid #48B736";
+                fourthObject.style.borderRadius = "5px";
+            }
+
             addImage(
                 "failure",
                 document.getElementsByClassName("question18"),
@@ -2151,15 +2228,28 @@ function question18() {
                 18
             );
 
-            //addCorrectAnswerQuestion18();
+            addCorrectAnswerQuestion18();
         }
     } else {
-        document.getElementById("firstBtn18").style.border =
-            "2px solid #FFB47D";
-        document.getElementById("secondBtn18").style.border =
-            "2px solid #FFB47D";
-        document.getElementById("thirdBtn18").style.border =
-            "2px solid #FFB47D";
+        if (idObjectFirst === "emptyPlace180") {
+            firstObject.style.border = "2px solid #FFB47D";
+            firstObject.style.borderRadius = "5px";
+        }
+
+        if (idObjectSecond === "emptyPlace181") {
+            secondObject.style.border = "2px solid #FFB47D";
+            secondObject.style.borderRadius = "5px";
+        }
+
+        if (idObjectThird === "emptyPlace182") {
+            thirdObject.style.border = "2px solid #FFB47D";
+            thirdObject.style.borderRadius = "5px";
+        }
+
+        if (idObjectFourth === "emptyPlace183") {
+            fourthObject.style.border = "2px solid #FFB47D";
+            fourthObject.style.borderRadius = "5px";
+        }
     }
 }
 
@@ -2426,7 +2516,7 @@ document.getElementById("submit").onclick = function () {
     question15();
     question16();
     // question17();
-    // question18();
+    question18();
     question19();
     question20();
     question21();
