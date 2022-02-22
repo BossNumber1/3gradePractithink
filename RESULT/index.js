@@ -123,6 +123,10 @@ function addMiniIcon(elem, status) {
         objDiv.style.marginTop = "-55px";
     }
 
+    if (elem.parentElement.parentElement.className === "content17") {
+        objDiv.style.marginTop = "-25px";
+    }
+
     if (
         elem.parentElement.parentElement.parentElement.parentElement
             .parentElement.className === "content9"
@@ -2309,6 +2313,45 @@ function question16() {
 
 // 17 QUESTION
 
+function question17() {
+    // получаем содежимое блоков
+    let object =
+        document.getElementsByClassName("placeToInsert")[0].children[0];
+    let idObject = object.id;
+
+    if (idObject !== "emptyPlummet170") {
+        // проверяем на верность для создания статуса
+        if (idObject === "thirdPlummet170") {
+            addMiniIcon(object, "success");
+            object.style.border = "2px solid #48B736";
+            object.style.borderRadius = "5px";
+
+            addImage(
+                "success",
+                document.getElementsByClassName("question17"),
+                "app17",
+                17
+            );
+        } else {
+            addMiniIcon(object, "failure");
+            object.style.border = "2px solid #ED7777";
+            object.style.borderRadius = "5px";
+
+            addImage(
+                "failure",
+                document.getElementsByClassName("question17"),
+                "app17",
+                17
+            );
+
+            addCorrectAnswerQuestion17();
+        }
+    } else {
+        object.style.border = "2px solid #FFB47D";
+        object.style.borderRadius = "5px";
+    }
+}
+
 // 18 QUESTION
 
 function question18() {
@@ -2713,7 +2756,7 @@ document.getElementById("submit").onclick = function () {
     question14();
     question15();
     question16();
-    // question17();
+    question17();
     question18();
     question19();
     question20();
